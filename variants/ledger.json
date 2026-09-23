@@ -1,0 +1,144 @@
+{
+  "source": "https://store.line.me/stickershop/author/6633487/ja",
+  "source_note": "LINEの毛色名とサムネイルを参考にした。RGB値はImageGenへの指示用の目安で、スタンプのピクセルを複製したものではない。",
+  "production_method": "ImageGenで毛色ごとの写真風基準画像を1枚ずつ生成し、採用画像を参照して既存の3動作を動画化する。機械的な色替え試作は rejected-recolor-trial に隔離した。",
+  "motion_sources": {
+    "a": "concept/flow-alpha/agouti-a-bottom-pop.mov",
+    "b": "concept/flow-alpha/agouti-b-side-peek.mov",
+    "c": "concept/flow-alpha/agouti-c-center-hop.mov"
+  },
+  "variants": [
+    {
+      "id": "agouti",
+      "name": "アグーチ",
+      "kind": "solid",
+      "coat": "#947E68",
+      "reference": "https://store.line.me/stickershop/product/36512491/ja",
+      "status": "accepted-source",
+      "imagegen_reference": "concept/degu-agouti-chroma-reference.png"
+    },
+    {
+      "id": "sand",
+      "name": "サンド",
+      "kind": "solid",
+      "coat": "#BFA37D",
+      "reference": "https://store.line.me/stickershop/product/36552770/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/sand-v1.png"
+    },
+    {
+      "id": "white",
+      "name": "ホワイト",
+      "kind": "solid",
+      "coat": "#E1DEDA",
+      "reference": "https://store.line.me/stickershop/product/36552733/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/white-v1.png"
+    },
+    {
+      "id": "black",
+      "name": "ブラック",
+      "kind": "solid",
+      "coat": "#514C4A",
+      "reference": "https://store.line.me/stickershop/product/36552738/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/black-v1.png"
+    },
+    {
+      "id": "blue",
+      "name": "ブルー",
+      "kind": "solid",
+      "coat": "#79838F",
+      "reference": "https://store.line.me/stickershop/product/36552739/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/blue-v1.png"
+    },
+    {
+      "id": "gray",
+      "name": "グレー",
+      "kind": "solid",
+      "coat": "#968F89",
+      "reference": "https://store.line.me/stickershop/product/36519179/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/gray-v2.png"
+    },
+    {
+      "id": "chocolate",
+      "name": "チョコレート",
+      "kind": "solid",
+      "coat": "#6B4B3C",
+      "reference": "https://store.line.me/stickershop/product/36756903/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/chocolate-v1.png"
+    },
+    {
+      "id": "lilac",
+      "name": "ライラック",
+      "kind": "solid",
+      "coat": "#A89A9D",
+      "reference": "https://store.line.me/stickershop/product/36577509/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/lilac-v1.png"
+    },
+    {
+      "id": "violet",
+      "name": "バイオレット",
+      "kind": "solid",
+      "coat": "#827981",
+      "reference": "https://store.line.me/stickershop/product/36577475/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/violet-v1.png"
+    },
+    {
+      "id": "agouti_pied",
+      "name": "アグーチパイド",
+      "kind": "pied",
+      "base": "agouti",
+      "patch": "#E5DED1",
+      "reference": "https://store.line.me/stickershop/product/36552734/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/agouti_pied-v1.png"
+    },
+    {
+      "id": "sand_pied",
+      "name": "サンドパイド",
+      "kind": "pied",
+      "base": "sand",
+      "patch": "#EAE2D6",
+      "reference": "https://store.line.me/stickershop/product/36552756/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/sand_pied-v1.png"
+    },
+    {
+      "id": "blue_pied",
+      "name": "ブルーパイド",
+      "kind": "pied",
+      "base": "blue",
+      "patch": "#E4E2DF",
+      "reference": "https://store.line.me/stickershop/product/36552748/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/blue_pied-v1.png"
+    },
+    {
+      "id": "cream_pied",
+      "name": "クリームパイド",
+      "kind": "pied",
+      "base": "cream",
+      "base_coat": "#D9CBAE",
+      "patch": "#F0EBE2",
+      "reference": "https://store.line.me/stickershop/product/36552747/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/cream_pied-v1.png"
+    },
+    {
+      "id": "black_pied",
+      "name": "ブラックパイド",
+      "kind": "pied",
+      "base": "black",
+      "patch": "#E3DFD7",
+      "reference": "https://store.line.me/stickershop/product/36552741/ja",
+      "status": "imagegen-reference-ready",
+      "imagegen_reference": "variants/imagegen/black_pied-v1.png"
+    }
+  ]
+}

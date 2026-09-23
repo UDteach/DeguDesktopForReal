@@ -1,0 +1,15 @@
+node_modules/
+release-build/
+dist/
+.DS_Store
+._*
+*.log
+assets/icons/app.iconset/
+concept/flow-alpha/
+concept/flow-alpha-v1/
+concept/flow-alpha-v2/
+concept/flow-raw/qa/
+concept/previews/
+variants/rejected-recolor-trial/
+variants/imagegen/rejected/
+scripts/__pycache__/

@@ -1,0 +1,39 @@
+{
+  "name": "degu-gatekeeper",
+  "version": "0.2.0",
+  "private": true,
+  "author": "UDteach",
+  "description": "A little degu that occasionally appears over your desktop",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:mac": "electron-builder --mac dmg zip",
+    "dist:win": "electron-builder --win nsis zip",
+    "pack": "electron-builder --dir"
+  },
+  "devDependencies": {
+    "electron": "44.4.5",
+    "electron-builder": "26.15.3"
+  },
+  "build": {
+    "appId": "com.kdevelopk.degugatekeeper",
+    "productName": "Degu Gatekeeper",
+    "directories": { "output": "release-build" },
+    "files": ["electron/**/*", "assets/icons/tray.png", "package.json"],
+    "extraResources": [
+      { "from": "assets/videos", "to": "videos", "filter": ["**/*.webm"] }
+    ],
+    "mac": {
+      "category": "public.app-category.entertainment",
+      "icon": "assets/icons/app.icns",
+      "identity": null,
+      "target": [{ "target": "dmg", "arch": ["arm64", "x64"] }, { "target": "zip", "arch": ["arm64", "x64"] }]
+    },
+    "win": {
+      "icon": "assets/icons/app.ico",
+      "target": [{ "target": "nsis", "arch": ["x64"] }, { "target": "zip", "arch": ["x64"] }]
+    },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true },
+    "publish": null
+  }
+}
