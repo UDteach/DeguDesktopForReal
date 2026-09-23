@@ -71,6 +71,17 @@ def keyed_frame(raw: bytes, width: int, height: int) -> bytes:
     edge_weight = np.clip((1 - alpha) / 0.10, 0, 1)
     green_limit = red - (red - blue) * 0.5 * edge_weight
     pixels[:, :, 1] = np.minimum(pixels[:, :, 1], green_limit).astype(np.uint8)
+
+    # Some Flow clips have olive spill baked into opaque pale fur, especially
+    # beneath the chin. Blend only the suspicious yellow-green pixels toward
+    # the neighboring warm fur; keep neutral white/gray and soft alpha intact.
+    green = pixels[:, :, 1].astype(np.float32)
+    warm = np.maximum(red - blue, 0)
+    olive = (np.clip((warm - 15) / 25, 0, 1) *
+             np.clip((green - red + 20) / 20, 0, 1) *
+             np.clip((alpha - 0.30) / 0.35, 0, 1))
+    neutral_green = red - 0.50 * warm
+    pixels[:, :, 1] = np.rint(green - olive * np.maximum(green - neutral_green, 0)).astype(np.uint8)
     rgba = np.empty((height, width, 4), dtype=np.uint8)
     rgba[:, :, :3] = pixels
     rgba[:, :, 3] = np.rint(alpha * 255).astype(np.uint8)

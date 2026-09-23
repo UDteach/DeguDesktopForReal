@@ -14,7 +14,8 @@ function currentButton() {
 
 function selectButton(button) {
   for (const item of buttons) item.setAttribute('aria-pressed', String(item === button));
-  video.setAttribute('aria-label', `アグーチカラーのデグーの動き：${button.dataset.label}`);
+  const prefix = document.documentElement.lang === 'en' ? 'Agouti degu motion: ' : 'アグーチカラーのデグーの動き：';
+  video.setAttribute('aria-label', `${prefix}${button.dataset.label}`);
 }
 
 function playSelected(button) {

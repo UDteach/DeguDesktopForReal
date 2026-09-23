@@ -2,13 +2,13 @@
 
 壁紙を変えず、リアルなデグーがときどきデスクトップに現れるアプリです。透明なクリック透過ウィンドウで3種類の短い動きを再生します。Mac と Windows に対応します。Mac 版は Intel・Apple Silicon の両方を用意し、macOS 12 Monterey 以降で動作します。
 
-**[紹介ページ](https://udteach.github.io/DeguDesktopForReal/)** · **[Mac / Windows ダウンロード](https://udteach.github.io/DeguDesktopForReal/download.html)**
+**[紹介ページ](https://udteach.github.io/DeguDesktopForReal/)** · **[English site](https://udteach.github.io/DeguDesktopForReal/index-en.html)** · **[Mac / Windows ダウンロード](https://udteach.github.io/DeguDesktopForReal/download.html)** · **[更新履歴](CHANGELOG.md)**
 
 Mac のダウンロードでは、Intel 搭載機は Intel 用 DMG、M1 以降の Apple Silicon 搭載機は Apple Silicon 用 DMG を選んでください。対応 OS は macOS 12 Monterey 以降です。
 
 ## 使い方
 
-アプリを起動すると、1回デグーが現れます。その後はランダムな間隔で現れます。メニューバー（Mac）または通知領域（Windows）の肉球アイコンから「今すぐ表示」「一時停止」「毛色」「出現間隔」「表示サイズ」「終了」を選べます。毛色メニューでは「1色だけ表示」、複数選択した毛色からランダムに表示、「全色ランダム」を選べます。
+アプリを起動すると、1回デグーが現れます。その後は選んだ間隔で現れます。メニューバー（Mac）または通知領域（Windows）の肉球アイコンから「今すぐ表示」「一時停止」「毛色」「出現間隔」「表示サイズ」「言語」「終了」を選べます。出現間隔は「1〜30秒」「1〜3分」「3〜6分」「5〜10分」「10〜20分」のランダム範囲、またはカスタムで固定値・任意のランダム範囲を設定できます。言語は日本語と英語に対応します。毛色メニューでは「1色だけ表示」、複数選択した毛色からランダムに表示、「全色ランダム」を選べます。
 
 アグーチ、サンド、ホワイト、ブラック、ブルー（グレー）、チョコレート、ライラック、バイオレットと、5種類のパイドを収録しています。13色それぞれに3動作があり、3本そろった毛色だけアプリのメニューに表示されます。毛色と動画の対応は [制作台帳](variants/ledger.json) に記録しています。
 

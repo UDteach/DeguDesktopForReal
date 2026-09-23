@@ -8,25 +8,62 @@ const motions = [
   { id: 'c-center-hop', anchor: 'left' },
 ];
 const frequencies = [
-  { label: '3〜6分ごと', min: 180, max: 360 },
-  { label: '5〜10分ごと', min: 300, max: 600 },
-  { label: '10〜20分ごと', min: 600, max: 1200 },
+  { label: { ja: '3〜6分ごと', en: 'Every 3–6 minutes' }, min: 180, max: 360 },
+  { label: { ja: '5〜10分ごと', en: 'Every 5–10 minutes' }, min: 300, max: 600 },
+  { label: { ja: '10〜20分ごと', en: 'Every 10–20 minutes' }, min: 600, max: 1200 },
+  { label: { ja: '1〜30秒ごと', en: 'Every 1–30 seconds' }, min: 1, max: 30 },
+  { label: { ja: '1〜3分ごと', en: 'Every 1–3 minutes' }, min: 60, max: 180 },
 ];
+// Keep saved frequency indices stable while showing the menu from shortest to longest.
+const frequencyMenuOrder = [3, 4, 0, 1, 2];
 const sizes = [
-  { label: '小さめ', scale: 0.45 },
-  { label: '標準', scale: 0.60 },
-  { label: '大きめ', scale: 0.80 },
-  { label: '特大', scale: 1.0 },
+  { label: { ja: '小さめ', en: 'Small' }, scale: 0.45 },
+  { label: { ja: '標準', en: 'Standard' }, scale: 0.60 },
+  { label: { ja: '大きめ', en: 'Large' }, scale: 0.80 },
+  { label: { ja: '特大', en: 'Extra large' }, scale: 1.0 },
 ];
+const copy = {
+  ja: {
+    showNow: '今すぐ表示', resume: '再開', pause: '一時停止', colors: '毛色',
+    allColors: '全色ランダム', oneColor: '1色だけ表示',
+    selectedColors: '選択した毛色からランダム（複数可）',
+    interval: '出現間隔', custom: 'カスタム間隔…', size: '表示サイズ', language: '言語', quit: '終了',
+  },
+  en: {
+    showNow: 'Show now', resume: 'Resume', pause: 'Pause', colors: 'Coat color',
+    allColors: 'Random from all colors', oneColor: 'One color only',
+    selectedColors: 'Random from selected colors (multiple)',
+    interval: 'Appearance interval', custom: 'Custom interval…', size: 'Display size', language: 'Language', quit: 'Quit',
+  },
+};
+const colorNames = {
+  agouti: { ja: 'アグーチ', en: 'Agouti' },
+  sand: { ja: 'サンド', en: 'Sand' },
+  white: { ja: 'ホワイト', en: 'White' },
+  black: { ja: 'ブラック', en: 'Black' },
+  blue: { ja: 'ブルー（グレー）', en: 'Blue (Gray)' },
+  chocolate: { ja: 'チョコレート', en: 'Chocolate' },
+  lilac: { ja: 'ライラック', en: 'Lilac' },
+  violet: { ja: 'バイオレット', en: 'Violet' },
+  agouti_pied: { ja: 'アグーチパイド', en: 'Agouti Pied' },
+  sand_pied: { ja: 'サンドパイド', en: 'Sand Pied' },
+  blue_pied: { ja: 'ブルーパイド', en: 'Blue Pied' },
+  cream_pied: { ja: 'クリームパイド', en: 'Cream Pied' },
+  black_pied: { ja: 'ブラックパイド', en: 'Black Pied' },
+};
 
 let tray;
 let overlay;
+let intervalWindow;
 let nextTimer;
 let stopTimer;
 let lastMotion = -1;
 let lastColor;
 let paused = false;
-let settings = { frequency: 1, size: 1, allColors: true, colors: [] };
+let settings = {
+  frequency: 1, customInterval: { min: 60, max: 180 }, size: 1,
+  language: 'ja', allColors: true, colors: [],
+};
 let availableColors = [];
 let migratedSettings = false;
 
@@ -40,6 +77,11 @@ function settingsPath() {
   return path.join(app.getPath('userData'), 'settings.json');
 }
 
+function validInterval(value) {
+  return value && Number.isInteger(value.min) && Number.isInteger(value.max) &&
+    value.min >= 1 && value.max <= 86400 && value.min <= value.max;
+}
+
 function loadSettings() {
   try {
     const current = settingsPath();
@@ -48,7 +90,10 @@ function loadSettings() {
     const saved = JSON.parse(fs.readFileSync(source, 'utf8'));
     migratedSettings = source === legacy;
     if (Number.isInteger(saved.frequency) && frequencies[saved.frequency]) settings.frequency = saved.frequency;
+    if (validInterval(saved.customInterval)) settings.customInterval = saved.customInterval;
+    if (saved.frequency === 'custom' && validInterval(saved.customInterval)) settings.frequency = 'custom';
     if (Number.isInteger(saved.size) && sizes[saved.size]) settings.size = saved.size;
+    if (saved.language === 'ja' || saved.language === 'en') settings.language = saved.language;
     if (Array.isArray(saved.colors)) {
       settings.colors = saved.colors.filter((id) => typeof id === 'string');
       if (typeof saved.allColors === 'boolean') settings.allColors = saved.allColors;
@@ -102,48 +147,90 @@ function selectOnlyColor(id) {
 }
 
 function menu() {
-  const colorNames = {
-    agouti: 'アグーチ', sand: 'サンド', white: 'ホワイト', black: 'ブラック',
-    blue: 'ブルー（グレー）', chocolate: 'チョコレート', lilac: 'ライラック',
-    violet: 'バイオレット', agouti_pied: 'アグーチパイド', sand_pied: 'サンドパイド',
-    blue_pied: 'ブルーパイド', cream_pied: 'クリームパイド', black_pied: 'ブラックパイド',
-  };
+  const language = settings.language;
+  const t = copy[language];
   return Menu.buildFromTemplate([
-    { label: '今すぐ表示', click: playNext },
-    { label: paused ? '再開' : '一時停止', click: () => { paused = !paused; stop(); if (!paused) schedule(); refreshMenu(); } },
+    { label: t.showNow, click: playNext },
+    { label: paused ? t.resume : t.pause, click: () => { paused = !paused; stop(); if (!paused) schedule(); refreshMenu(); } },
     { type: 'separator' },
-    { label: '毛色', submenu: [
-      { label: '全色ランダム', type: 'checkbox', checked: settings.allColors,
+    { label: t.colors, submenu: [
+      { label: t.allColors, type: 'checkbox', checked: settings.allColors,
         click: () => {
           settings.allColors = !settings.allColors;
           if (!settings.allColors && settings.colors.length === 0) settings.colors = [...availableColors];
           saveSettings(); refreshMenu();
         } },
-      { label: '1色だけ表示', submenu: availableColors.map((id) => ({
-        label: colorNames[id] || id, type: 'checkbox',
+      { label: t.oneColor, submenu: availableColors.map((id) => ({
+        label: colorNames[id]?.[language] || id, type: 'checkbox',
         checked: !settings.allColors && settings.colors.length === 1 && settings.colors[0] === id,
         click: () => selectOnlyColor(id),
       })) },
       { type: 'separator' },
-      { label: '選択した毛色からランダム（複数可）', submenu: availableColors.map((id) => ({
-        label: colorNames[id] || id, type: 'checkbox',
+      { label: t.selectedColors, submenu: availableColors.map((id) => ({
+        label: colorNames[id]?.[language] || id, type: 'checkbox',
         checked: selectedColors().includes(id), click: () => toggleColor(id),
       })) },
     ] },
-    { label: '出現間隔', submenu: frequencies.map((item, index) => ({
-      label: item.label, type: 'radio', checked: settings.frequency === index,
-      click: () => { settings.frequency = index; saveSettings(); schedule(); refreshMenu(); },
-    })) },
-    { label: '表示サイズ', submenu: sizes.map((item, index) => ({
-      label: item.label, type: 'radio', checked: settings.size === index,
+    { label: t.interval, submenu: [
+      ...frequencyMenuOrder.map((index) => ({
+        label: frequencies[index].label[language], type: 'radio', checked: settings.frequency === index,
+        click: () => { settings.frequency = index; saveSettings(); schedule(); refreshMenu(); },
+      })),
+      { label: t.custom, type: 'radio', checked: settings.frequency === 'custom',
+        click: () => { openIntervalWindow(); refreshMenu(); } },
+    ] },
+    { label: t.size, submenu: sizes.map((item, index) => ({
+      label: item.label[language], type: 'radio', checked: settings.size === index,
       click: () => { settings.size = index; saveSettings(); refreshMenu(); },
     })) },
+    { label: t.language, submenu: [
+      { label: '日本語', type: 'radio', checked: language === 'ja',
+        click: () => { settings.language = 'ja'; saveSettings(); refreshMenu(); } },
+      { label: 'English', type: 'radio', checked: language === 'en',
+        click: () => { settings.language = 'en'; saveSettings(); refreshMenu(); } },
+    ] },
     { type: 'separator' },
-    { label: '終了', role: 'quit' },
+    { label: t.quit, role: 'quit' },
   ]);
 }
 
 function refreshMenu() { tray.setContextMenu(menu()); }
+
+function openIntervalWindow() {
+  if (intervalWindow && !intervalWindow.isDestroyed()) {
+    intervalWindow.focus();
+    return;
+  }
+  stop();
+  intervalWindow = new BrowserWindow({
+    width: 420, height: 420, show: false, resizable: false, autoHideMenuBar: true,
+    title: 'Degu Desktop for Real',
+    webPreferences: {
+      preload: path.join(__dirname, 'interval-preload.js'),
+      contextIsolation: true, nodeIntegration: false, sandbox: true,
+    },
+  });
+  intervalWindow.loadFile(path.join(__dirname, 'interval.html'));
+  intervalWindow.once('ready-to-show', () => intervalWindow.show());
+  intervalWindow.on('closed', () => { intervalWindow = undefined; schedule(); });
+}
+
+ipcMain.handle('interval:get', (event) => {
+  if (event.sender !== intervalWindow?.webContents) return null;
+  const range = settings.frequency === 'custom'
+    ? settings.customInterval : frequencies[settings.frequency];
+  return { language: settings.language, min: range.min, max: range.max };
+});
+
+ipcMain.handle('interval:save', (event, value) => {
+  if (event.sender !== intervalWindow?.webContents || !validInterval(value)) return false;
+  settings.customInterval = { min: value.min, max: value.max };
+  settings.frequency = 'custom';
+  saveSettings();
+  refreshMenu();
+  setImmediate(() => intervalWindow?.close());
+  return true;
+});
 
 function stop() {
   clearTimeout(nextTimer);
@@ -155,8 +242,9 @@ function stop() {
 
 function schedule() {
   clearTimeout(nextTimer);
-  if (paused || availableColors.length === 0) return;
-  const range = frequencies[settings.frequency];
+  if (paused || intervalWindow || availableColors.length === 0) return;
+  const range = settings.frequency === 'custom'
+    ? settings.customInterval : frequencies[settings.frequency];
   const seconds = range.min + Math.random() * (range.max - range.min);
   nextTimer = setTimeout(playNext, seconds * 1000);
 }

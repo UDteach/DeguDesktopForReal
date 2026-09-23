@@ -7,13 +7,14 @@
   <meta name="description" content="壁紙を変えずに、デグーがたまにぴょこっと現れるデスクトップアプリ。Mac・Windows対応。">
   <title>Degu Desktop for Real</title>
   <link rel="icon" href="assets/icon.png">
+  <link rel="alternate" hreflang="en" href="index-en.html">
   <link rel="stylesheet" href="style.css">
   <script src="demo.js" defer></script>
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#top"><span class="brand-mark">●</span> Degu Desktop <span class="brand-tag">for Real</span></a>
-    <nav><a href="#how">使い方</a><a href="#colors">毛色</a><a href="download.html">ダウンロード</a></nav>
+    <nav><a href="#how">使い方</a><a href="#colors">毛色</a><a href="download.html">ダウンロード</a><a class="language-link" href="index-en.html" lang="en" aria-label="Read this page in English">EN</a></nav>
   </header>
   <main id="top">
     <section class="hero">
@@ -27,18 +28,20 @@
         </div>
         <p class="release-note">13の毛色と3つの動き。毛色は複数選択できます。デモ画面では実際の動きを試せます。</p>
       </div>
-      <div class="desktop" aria-label="デスクトップに現れるデグーのイメージ">
-        <div class="desktop-bar"><span>● ● ●</span><span>9:41</span></div>
-        <div class="desktop-window"><div class="window-dots">● ● ●</div><div class="window-lines"><i></i><i></i><i></i><i></i></div></div>
-        <img class="hero-degu hero-degu-fallback" src="assets/colors/agouti.png" alt="アグーチカラーのリアルなデグー">
-        <video class="hero-degu-video" id="demo-video" muted playsinline preload="none" aria-label="アグーチカラーのデグーが跳び込む動画"></video>
-        <img class="hero-degu-animation" id="demo-webp" alt="" aria-hidden="true">
+      <div class="demo-stage">
+        <div class="desktop" aria-label="デスクトップに現れるデグーのイメージ">
+          <div class="desktop-bar"><span>● ● ●</span><span>9:41</span></div>
+          <div class="desktop-window"><div class="window-dots">● ● ●</div><div class="window-lines"><i></i><i></i><i></i><i></i></div></div>
+          <img class="hero-degu hero-degu-fallback" src="assets/colors/agouti.png" alt="アグーチカラーのリアルなデグー">
+          <video class="hero-degu-video" id="demo-video" muted playsinline preload="none" aria-label="アグーチカラーのデグーが跳び込む動画"></video>
+          <img class="hero-degu-animation" id="demo-webp" alt="" aria-hidden="true">
+          <div class="desktop-label">壁紙の上に、そっと重ねて表示</div>
+        </div>
         <div class="demo-controls" id="demo-controls" role="group" aria-label="デグーの動きを選ぶ" hidden>
           <button type="button" data-demo="agouti-a-bottom-pop.webm" data-label="下からぴょこ" aria-pressed="false">下から</button>
           <button type="button" data-demo="agouti-b-side-peek.webm" data-label="端からのぞく" aria-pressed="false">端から</button>
           <button type="button" data-demo="agouti-c-center-hop.webm" data-label="跳び込む" aria-pressed="true">跳び込む</button>
         </div>
-        <div class="desktop-label">壁紙の上に、そっと重ねて表示</div>
       </div>
     </section>
     <section class="features" id="how">

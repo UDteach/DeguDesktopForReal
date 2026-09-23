@@ -6,7 +6,7 @@
 - Status: verified
 - Owner: Codex
 - Last verified: 2026-09-24
-- Target release or task: v0.4.0 direct downloads and mobile motion demo
+- Target release or task: v0.4.1 bilingual pages and mobile motion controls
 
 ## Product and primary job / 対象と主目的
 
@@ -29,7 +29,7 @@
 
 - Product and business: Three installer choices: Intel Mac, Apple Silicon Mac, Windows x64. ZIP is secondary.
 - Technical and component system: Static GitHub Pages, existing CSS and assets; direct links to stable asset names in the latest GitHub Release.
-- Content and localization: Japanese first. Explain Intel versus M chip and macOS 12 minimum without jargon.
+- Content and localization: Japanese and English pages. Explain Intel versus M chip and macOS 12 minimum without jargon. Language links preserve the current page type.
 - Performance: No JavaScript or extra network request required to reveal download links.
 - Accessibility: Native links, visible focus, readable text and sufficient tap area.
 - Supported viewports and devices: Desktop 1440 px, mobile 390 px and 320 px.
@@ -80,7 +80,7 @@ flowchart LR
   D --> E[Installation help if needed]
 ```
 
-- Navigation: Product page primary action and footer callout open the chooser; chooser links back to product details.
+- Navigation: Product page primary action and footer callout open the chooser; chooser links back to product details. The header switches between Japanese and English versions of the current page.
 - First viewport order: Page title, compatibility sentence, three installer choices.
 - Progressive disclosure: ZIP alternatives and install guidance follow the main buttons.
 - Error recovery: Latest release link and ZIP alternatives remain available if a browser blocks a direct download.
@@ -93,7 +93,7 @@ flowchart LR
 - Spacing/grid: Maximum 1200 px content width; three columns on desktop, one column on mobile.
 - Radius/border/elevation rules: Use existing soft radii; borders distinguish choices without heavy shadows.
 - Icons and imagery: Existing degu asset may appear as a small accent; platform names remain text.
-- Motion and reduced-motion behavior: The download page has no animation. The product page previews the three WebM clips in browsers that support VP9 and animated WebP conversions in WebKit, where transparent VP9 WebM has a known grey-background bug. Reduced-motion settings prevent autoplay. A still image remains if media fails.
+- Motion and reduced-motion behavior: The download page has no animation. The product page previews the three WebM clips in browsers that support VP9 and animated WebP conversions in WebKit, where transparent VP9 WebM has a known grey-background bug. Reduced-motion settings prevent autoplay. A still image remains if media fails. Mobile motion controls sit below the preview so they do not cover the mock desktop window.
 - Design-token source or mapping: Existing `docs/style.css` colors and type.
 
 ## Responsive behavior / レスポンシブ
@@ -138,6 +138,8 @@ flowchart LR
 - [x] Public copy names chips and OS versions plainly.
 - [x] The download page needs no JavaScript; the demo uses the three existing 1.5–2.1 MB WebM clips and three 0.8–1.3 MB WebP conversions for WebKit.
 - [x] Mobile demo starts with the full-body center-hop clip; the entire mock is visible at 390×844 and 320×780.
+- [x] Japanese and English mobile headers, preview controls, and download pages have no horizontal overflow at 390 px and 320 px.
+- [x] Mobile motion controls start below the preview card; the card and controls do not overlap.
 - [x] Mismatch ledger has no unexplained release blocker.
 
 ## Evidence and mismatch ledger / 証拠と差分
@@ -149,12 +151,17 @@ flowchart LR
 ![WebM demo narrow mobile](evidence/after/chrome-320.png)
 ![Animated WebP demo mobile](evidence/after/safari-webp-390.png)
 ![Reduced-motion still mobile](evidence/after/safari-reduced-390.png)
+![Japanese mobile controls below preview](evidence/after/home-ja-mobile-controls.png)
+![English product page mobile](evidence/after/home-en-mobile.png)
+![English download page mobile](evidence/after/download-en-mobile.png)
 
 | View/state | Baseline | Target | Implemented | Mismatch | Decision |
 | --- | --- | --- | --- | --- | --- |
 | Desktop download | Current landing screenshot | Three visible OS choices | `download-desktop.png` | No blocker | Accepted |
 | Mobile download | Long landing journey | Single-column choices | `download-mobile.png`, `download-mobile-320.png` | No blocker | Accepted |
 | Motion preview | Static degu image and a clipped mobile first view | Real three-motion playback with a full degu in the mobile first view | `demo-desktop.png`, `demo-mobile.png`, `chrome-320.png`, `safari-webp-390.png` | Physical iPhone Safari was unavailable; WebKit path was checked with Safari user agent in Chrome | Accepted with device QA pending |
+| Mobile motion controls | Controls covered the mock desktop window | Controls below the preview card | `home-ja-mobile-controls.png`, `home-ja-mobile-320.png` | None at 390 px and 320 px | Accepted |
+| English pages | Japanese only | Product and download pages with direct links | `home-en-mobile.png`, `download-en-mobile.png` | None at 390 px and 320 px | Accepted |
 
 ## Open decisions / 未決事項
 
