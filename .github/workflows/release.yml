@@ -54,5 +54,5 @@ jobs:
           if gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             gh release upload "$GITHUB_REF_NAME" "${files[@]}" --clobber --repo "$GITHUB_REPOSITORY"
           else
-            gh release create "$GITHUB_REF_NAME" "${files[@]}" --repo "$GITHUB_REPOSITORY" --title "Degu Gatekeeper $GITHUB_REF_NAME" --notes "Mac と Windows 向けのデスクトップ版。アグーチの3つの動きを収録。壁紙を変更せず、透明なクリック透過ウィンドウで表示します。"
+            gh release create "$GITHUB_REF_NAME" "${files[@]}" --repo "$GITHUB_REPOSITORY" --title "Degu Gatekeeper $GITHUB_REF_NAME" --notes "Mac と Windows 向けのデスクトップ版。13の毛色と各3つの動きを収録。毛色は複数選択または全色ランダムで表示できます。壁紙を変更せず、透明なクリック透過ウィンドウで表示します。"
           fi

@@ -20,7 +20,12 @@
         "assets/videos/agouti-a-bottom-pop.webm",
         "assets/videos/agouti-b-side-peek.webm",
         "assets/videos/agouti-c-center-hop.webm"
-      ]
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "720p",
+        "b-side-peek": "720p",
+        "c-center-hop": "720p"
+      }
     },
     {
       "id": "sand",
@@ -34,7 +39,12 @@
         "assets/videos/sand-a-bottom-pop.webm",
         "assets/videos/sand-b-side-peek.webm",
         "assets/videos/sand-c-center-hop.webm"
-      ]
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "1080p",
+        "b-side-peek": "1080p",
+        "c-center-hop": "1080p"
+      }
     },
     {
       "id": "white",
@@ -48,7 +58,12 @@
         "assets/videos/white-a-bottom-pop.webm",
         "assets/videos/white-b-side-peek.webm",
         "assets/videos/white-c-center-hop.webm"
-      ]
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "1080p",
+        "b-side-peek": "1080p",
+        "c-center-hop": "1080p"
+      }
     },
     {
       "id": "black",
@@ -62,7 +77,12 @@
         "assets/videos/black-a-bottom-pop.webm",
         "assets/videos/black-b-side-peek.webm",
         "assets/videos/black-c-center-hop.webm"
-      ]
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "1080p",
+        "b-side-peek": "1080p",
+        "c-center-hop": "1080p"
+      }
     },
     {
       "id": "blue",
@@ -76,7 +96,12 @@
         "assets/videos/blue-a-bottom-pop.webm",
         "assets/videos/blue-b-side-peek.webm",
         "assets/videos/blue-c-center-hop.webm"
-      ]
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "1080p",
+        "b-side-peek": "1080p",
+        "c-center-hop": "1080p"
+      }
     },
     {
       "id": "gray",
@@ -101,7 +126,12 @@
         "assets/videos/chocolate-a-bottom-pop.webm",
         "assets/videos/chocolate-b-side-peek.webm",
         "assets/videos/chocolate-c-center-hop.webm"
-      ]
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "1080p",
+        "b-side-peek": "1080p",
+        "c-center-hop": "1080p"
+      }
     },
     {
       "id": "lilac",
@@ -109,8 +139,19 @@
       "kind": "solid",
       "coat": "#A89A9D",
       "reference": "https://store.line.me/stickershop/product/36577509/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/lilac-v1.png"
+      "status": "video-ready-mixed-resolution",
+      "imagegen_reference": "variants/imagegen/lilac-v1.png",
+      "videos": [
+        "assets/videos/lilac-a-bottom-pop.webm",
+        "assets/videos/lilac-b-side-peek.webm",
+        "assets/videos/lilac-c-center-hop.webm"
+      ],
+      "note": "bottom-pop は Flow の 1080p 保存が完了せず 720p を採用。side-peek と center-hop は 1080p。",
+      "video_resolution": {
+        "a-bottom-pop": "720p",
+        "b-side-peek": "1080p",
+        "c-center-hop": "1080p"
+      }
     },
     {
       "id": "violet",
@@ -118,8 +159,18 @@
       "kind": "solid",
       "coat": "#827981",
       "reference": "https://store.line.me/stickershop/product/36577475/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/violet-v1.png"
+      "status": "video-ready-720p",
+      "imagegen_reference": "variants/imagegen/violet-v1.png",
+      "videos": [
+        "assets/videos/violet-a-bottom-pop.webm",
+        "assets/videos/violet-b-side-peek.webm",
+        "assets/videos/violet-c-center-hop.webm"
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "720p",
+        "b-side-peek": "720p",
+        "c-center-hop": "720p"
+      }
     },
     {
       "id": "agouti_pied",
@@ -128,8 +179,18 @@
       "base": "agouti",
       "patch": "#E5DED1",
       "reference": "https://store.line.me/stickershop/product/36552734/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/agouti_pied-v1.png"
+      "status": "video-ready-720p",
+      "imagegen_reference": "variants/imagegen/agouti_pied-v1.png",
+      "videos": [
+        "assets/videos/agouti_pied-a-bottom-pop.webm",
+        "assets/videos/agouti_pied-b-side-peek.webm",
+        "assets/videos/agouti_pied-c-center-hop.webm"
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "720p",
+        "b-side-peek": "720p",
+        "c-center-hop": "720p"
+      }
     },
     {
       "id": "sand_pied",
@@ -138,8 +199,18 @@
       "base": "sand",
       "patch": "#EAE2D6",
       "reference": "https://store.line.me/stickershop/product/36552756/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/sand_pied-v1.png"
+      "status": "video-ready-720p",
+      "imagegen_reference": "variants/imagegen/sand_pied-v1.png",
+      "videos": [
+        "assets/videos/sand_pied-a-bottom-pop.webm",
+        "assets/videos/sand_pied-b-side-peek.webm",
+        "assets/videos/sand_pied-c-center-hop.webm"
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "720p",
+        "b-side-peek": "720p",
+        "c-center-hop": "720p"
+      }
     },
     {
       "id": "blue_pied",
@@ -148,8 +219,18 @@
       "base": "blue",
       "patch": "#E4E2DF",
       "reference": "https://store.line.me/stickershop/product/36552748/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/blue_pied-v1.png"
+      "status": "video-ready-720p",
+      "imagegen_reference": "variants/imagegen/blue_pied-v1.png",
+      "videos": [
+        "assets/videos/blue_pied-a-bottom-pop.webm",
+        "assets/videos/blue_pied-b-side-peek.webm",
+        "assets/videos/blue_pied-c-center-hop.webm"
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "720p",
+        "b-side-peek": "720p",
+        "c-center-hop": "720p"
+      }
     },
     {
       "id": "cream_pied",
@@ -159,8 +240,18 @@
       "base_coat": "#D9CBAE",
       "patch": "#F0EBE2",
       "reference": "https://store.line.me/stickershop/product/36552747/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/cream_pied-v1.png"
+      "status": "video-ready-720p",
+      "imagegen_reference": "variants/imagegen/cream_pied-v1.png",
+      "videos": [
+        "assets/videos/cream_pied-a-bottom-pop.webm",
+        "assets/videos/cream_pied-b-side-peek.webm",
+        "assets/videos/cream_pied-c-center-hop.webm"
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "720p",
+        "b-side-peek": "720p",
+        "c-center-hop": "720p"
+      }
     },
     {
       "id": "black_pied",
@@ -169,8 +260,18 @@
       "base": "black",
       "patch": "#E3DFD7",
       "reference": "https://store.line.me/stickershop/product/36552741/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/black_pied-v1.png"
+      "status": "video-ready-720p",
+      "imagegen_reference": "variants/imagegen/black_pied-v1.png",
+      "videos": [
+        "assets/videos/black_pied-a-bottom-pop.webm",
+        "assets/videos/black_pied-b-side-peek.webm",
+        "assets/videos/black_pied-c-center-hop.webm"
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "720p",
+        "b-side-peek": "720p",
+        "c-center-hop": "720p"
+      }
     }
   ]
 }

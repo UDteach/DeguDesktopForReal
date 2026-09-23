@@ -89,6 +89,13 @@ function toggleColor(id) {
   refreshMenu();
 }
 
+function selectOnlyColor(id) {
+  settings.allColors = false;
+  settings.colors = [id];
+  saveSettings();
+  refreshMenu();
+}
+
 function menu() {
   const colorNames = {
     agouti: 'アグーチ', sand: 'サンド', white: 'ホワイト', black: 'ブラック',
@@ -107,11 +114,16 @@ function menu() {
           if (!settings.allColors && settings.colors.length === 0) settings.colors = [...availableColors];
           saveSettings(); refreshMenu();
         } },
+      { label: '1色だけ表示', submenu: availableColors.map((id) => ({
+        label: colorNames[id] || id, type: 'checkbox',
+        checked: !settings.allColors && settings.colors.length === 1 && settings.colors[0] === id,
+        click: () => selectOnlyColor(id),
+      })) },
       { type: 'separator' },
-      ...availableColors.map((id) => ({
+      { label: '選択した毛色からランダム（複数可）', submenu: availableColors.map((id) => ({
         label: colorNames[id] || id, type: 'checkbox',
         checked: selectedColors().includes(id), click: () => toggleColor(id),
-      })),
+      })) },
     ] },
     { label: '出現間隔', submenu: frequencies.map((item, index) => ({
       label: item.label, type: 'radio', checked: settings.frequency === index,
