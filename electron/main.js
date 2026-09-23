@@ -91,7 +91,7 @@ function toggleColor(id) {
 function menu() {
   const colorNames = {
     agouti: 'アグーチ', sand: 'サンド', white: 'ホワイト', black: 'ブラック',
-    blue: 'ブルー', gray: 'グレー', chocolate: 'チョコレート', lilac: 'ライラック',
+    blue: 'ブルー（グレー）', chocolate: 'チョコレート', lilac: 'ライラック',
     violet: 'バイオレット', agouti_pied: 'アグーチパイド', sand_pied: 'サンドパイド',
     blue_pied: 'ブルーパイド', cream_pied: 'クリームパイド', black_pied: 'ブラックパイド',
   };

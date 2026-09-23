@@ -61,12 +61,17 @@
     },
     {
       "id": "blue",
-      "name": "ブルー",
+      "name": "ブルー（グレー）",
       "kind": "solid",
       "coat": "#79838F",
       "reference": "https://store.line.me/stickershop/product/36552739/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/blue-v1.png"
+      "status": "video-ready-1080p",
+      "imagegen_reference": "variants/imagegen/blue-v1.png",
+      "videos": [
+        "assets/videos/blue-a-bottom-pop.webm",
+        "assets/videos/blue-b-side-peek.webm",
+        "assets/videos/blue-c-center-hop.webm"
+      ]
     },
     {
       "id": "gray",
@@ -74,8 +79,10 @@
       "kind": "solid",
       "coat": "#968F89",
       "reference": "https://store.line.me/stickershop/product/36519179/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/gray-v2.png"
+      "status": "alias-of-blue",
+      "imagegen_reference": "variants/imagegen/gray-v2.png",
+      "alias_of": "blue",
+      "note": "ブルーとグレーは同じ毛色として扱い、単独の動画・メニュー項目は公開しない。"
     },
     {
       "id": "chocolate",
