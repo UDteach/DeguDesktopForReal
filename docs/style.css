@@ -4,3 +4,17 @@
 @media(max-width:600px){.topbar{padding:0 22px;gap:8px}.brand{font-size:14px;white-space:nowrap}.brand-mark{font-size:19px;margin-right:2px}.brand-tag{display:none}.topbar nav{flex-shrink:0}.topbar nav a:not(:last-child){display:none}.hero{grid-template-columns:minmax(0,1fr);padding-left:22px;padding-right:22px}.hero>*{min-width:0}.hero h1{font-size:clamp(35px,9vw,48px);overflow-wrap:anywhere}.desktop{min-width:0}.actions .button{max-width:100%}}
 .hero-degu-fallback{transition:opacity .2s}.hero-degu-video{display:none;position:absolute;left:0;bottom:0;width:100%;height:auto;pointer-events:none;filter:drop-shadow(0 15px 10px #3d4c3440)}.demo-ready .hero-degu-video{display:block}.demo-playing .hero-degu-fallback{opacity:0}.demo-controls[hidden]{display:none}.demo-controls{position:absolute;z-index:5;top:49px;right:16px;display:flex;gap:5px;padding:5px;border-radius:999px;background:#f8faf0df;backdrop-filter:blur(9px);box-shadow:0 2px 12px #3b4c3420}.demo-controls button{border:0;background:transparent;color:#3d5541;border-radius:999px;padding:7px 10px;font:700 11px 'Noto Sans JP',sans-serif;cursor:pointer;white-space:nowrap}.demo-controls button[aria-pressed="true"]{background:#344a39;color:white}.demo-controls button:focus-visible{outline:3px solid #315c9e;outline-offset:2px}.desktop-label{z-index:6}@media(max-width:600px){.demo-controls{top:45px;right:10px;gap:1px;padding:4px}.demo-controls button{font-size:10px;padding:6px 8px}}
 .demo-controls button{min-height:36px}@media(max-width:600px){.demo-controls button{min-height:44px}footer span{display:block}}
+.hero-degu-animation{display:none;position:absolute;left:0;bottom:0;width:100%;height:auto;pointer-events:none;filter:drop-shadow(0 15px 10px #3d4c3440)}
+.demo-webp .hero-degu-animation{display:block}
+.demo-webp .hero-degu-video{display:none}
+@media(max-width:600px){
+  .hero{padding-top:32px;padding-bottom:55px;gap:20px}
+  .hero h1{margin:16px 0}
+  .hero-copy>p{line-height:1.8}
+  .actions{margin-top:22px}
+  .hero-copy .release-note{margin-top:13px}
+  .desktop{height:250px;min-height:250px}
+  .hero-degu{width:58%;right:6%}
+  .desktop-label{display:none}
+}
+@media(max-width:360px){.desktop{height:238px;min-height:238px}}

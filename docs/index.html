@@ -25,17 +25,18 @@
           <a class="button primary" href="download.html">アプリをダウンロード <span>↗</span></a>
           <a class="button secondary" href="#how">どんなアプリ？ <span>↓</span></a>
         </div>
-        <p class="release-note">13の毛色と3つの動き。毛色は複数選択できます。デモ画面では実際の透過動画を試せます。</p>
+        <p class="release-note">13の毛色と3つの動き。毛色は複数選択できます。デモ画面では実際の動きを試せます。</p>
       </div>
       <div class="desktop" aria-label="デスクトップに現れるデグーのイメージ">
         <div class="desktop-bar"><span>● ● ●</span><span>9:41</span></div>
         <div class="desktop-window"><div class="window-dots">● ● ●</div><div class="window-lines"><i></i><i></i><i></i><i></i></div></div>
         <img class="hero-degu hero-degu-fallback" src="assets/colors/agouti.png" alt="アグーチカラーのリアルなデグー">
-        <video class="hero-degu-video" id="demo-video" muted playsinline preload="auto" aria-label="アグーチカラーのデグーが下からぴょこっと現れる動画" src="assets/demo/agouti-a-bottom-pop.webm"></video>
+        <video class="hero-degu-video" id="demo-video" muted playsinline preload="none" aria-label="アグーチカラーのデグーが跳び込む動画"></video>
+        <img class="hero-degu-animation" id="demo-webp" alt="" aria-hidden="true">
         <div class="demo-controls" id="demo-controls" role="group" aria-label="デグーの動きを選ぶ" hidden>
-          <button type="button" data-demo="agouti-a-bottom-pop.webm" data-label="下からぴょこ" aria-pressed="true">下から</button>
+          <button type="button" data-demo="agouti-a-bottom-pop.webm" data-label="下からぴょこ" aria-pressed="false">下から</button>
           <button type="button" data-demo="agouti-b-side-peek.webm" data-label="端からのぞく" aria-pressed="false">端から</button>
-          <button type="button" data-demo="agouti-c-center-hop.webm" data-label="跳び込む" aria-pressed="false">跳び込む</button>
+          <button type="button" data-demo="agouti-c-center-hop.webm" data-label="跳び込む" aria-pressed="true">跳び込む</button>
         </div>
         <div class="desktop-label">壁紙の上に、そっと重ねて表示</div>
       </div>

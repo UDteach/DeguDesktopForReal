@@ -5,8 +5,8 @@
 
 - Status: verified
 - Owner: Codex
-- Last verified: 2026-09-23
-- Target release or task: v0.4.0 direct downloads and WebM product demo
+- Last verified: 2026-09-24
+- Target release or task: v0.4.0 direct downloads and mobile motion demo
 
 ## Product and primary job / 対象と主目的
 
@@ -93,7 +93,7 @@ flowchart LR
 - Spacing/grid: Maximum 1200 px content width; three columns on desktop, one column on mobile.
 - Radius/border/elevation rules: Use existing soft radii; borders distinguish choices without heavy shadows.
 - Icons and imagery: Existing degu asset may appear as a small accent; platform names remain text.
-- Motion and reduced-motion behavior: The download page has no animation. The product page previews the actual WebM clips; reduced-motion settings prevent autoplay.
+- Motion and reduced-motion behavior: The download page has no animation. The product page previews the three WebM clips in browsers that support VP9 and animated WebP conversions in WebKit, where transparent VP9 WebM has a known grey-background bug. Reduced-motion settings prevent autoplay. A still image remains if media fails.
 - Design-token source or mapping: Existing `docs/style.css` colors and type.
 
 ## Responsive behavior / レスポンシブ
@@ -136,7 +136,8 @@ flowchart LR
 - [x] Native links/buttons, visible focus, and reduced-motion behavior are present.
 - [x] No horizontal overflow at 1440, 390, or 320 px in Chrome viewport checks.
 - [x] Public copy names chips and OS versions plainly.
-- [x] The download page needs no JavaScript; the demo uses the three existing 1.5–2.1 MB clips.
+- [x] The download page needs no JavaScript; the demo uses the three existing 1.5–2.1 MB WebM clips and three 0.8–1.3 MB WebP conversions for WebKit.
+- [x] Mobile demo starts with the full-body center-hop clip; the entire mock is visible at 390×844 and 320×780.
 - [x] Mismatch ledger has no unexplained release blocker.
 
 ## Evidence and mismatch ledger / 証拠と差分
@@ -145,12 +146,15 @@ flowchart LR
 ![Download page mobile](evidence/after/download-mobile.png)
 ![WebM demo desktop](evidence/after/demo-desktop.png)
 ![WebM demo mobile](evidence/after/demo-mobile.png)
+![WebM demo narrow mobile](evidence/after/chrome-320.png)
+![Animated WebP demo mobile](evidence/after/safari-webp-390.png)
+![Reduced-motion still mobile](evidence/after/safari-reduced-390.png)
 
 | View/state | Baseline | Target | Implemented | Mismatch | Decision |
 | --- | --- | --- | --- | --- | --- |
 | Desktop download | Current landing screenshot | Three visible OS choices | `download-desktop.png` | No blocker | Accepted |
 | Mobile download | Long landing journey | Single-column choices | `download-mobile.png`, `download-mobile-320.png` | No blocker | Accepted |
-| WebM preview | Static degu image | Real three-motion playback | `demo-desktop.png`, `demo-mobile.png` | Static image remains as fallback | Accepted |
+| Motion preview | Static degu image and a clipped mobile first view | Real three-motion playback with a full degu in the mobile first view | `demo-desktop.png`, `demo-mobile.png`, `chrome-320.png`, `safari-webp-390.png` | Physical iPhone Safari was unavailable; WebKit path was checked with Safari user agent in Chrome | Accepted with device QA pending |
 
 ## Open decisions / 未決事項
 
@@ -162,3 +166,5 @@ flowchart LR
 | --- | --- | --- | --- |
 | Existing product page | This repository | Project-owned | Palette, type, degu asset |
 | AnimalsDesktop public page | UDteach | User's own reference | Download hierarchy and compatibility explanation |
+| [WebKit VP9 alpha bug](https://bugs.webkit.org/show_bug.cgi?id=275908) | WebKit Bugzilla | Public technical issue | Browser fallback decision |
+| [Safari 14 WebP support](https://webkit.org/blog/11340/new-webkit-features-in-safari-14/) | WebKit | Public technical documentation | Transparent animated WebP compatibility |
