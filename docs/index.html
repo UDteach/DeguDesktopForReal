@@ -5,36 +5,43 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#f5f3ea">
   <meta name="description" content="壁紙を変えずに、デグーがたまにぴょこっと現れるデスクトップアプリ。Mac・Windows対応。">
-  <title>Degu Gatekeeper</title>
+  <title>Degu Desktop for Real</title>
   <link rel="icon" href="assets/icon.png">
   <link rel="stylesheet" href="style.css">
+  <script src="demo.js" defer></script>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#top"><span class="brand-mark">●</span> Degu Gatekeeper</a>
-    <nav><a href="#how">使い方</a><a href="#colors">毛色</a><a href="https://github.com/UDteach/DeguGatekeeper">GitHub</a></nav>
+    <a class="brand" href="#top"><span class="brand-mark">●</span> Degu Desktop <span class="brand-tag">for Real</span></a>
+    <nav><a href="#how">使い方</a><a href="#colors">毛色</a><a href="download.html">ダウンロード</a></nav>
   </header>
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <span class="eyebrow">DESKTOP COMPANION · MAC / WINDOWS</span>
+        <span class="eyebrow">DEGU DESKTOP · FOR REAL</span>
         <h1>デスクトップに、<br><em>ぴょこっ。</em></h1>
         <p>作業の合間、リアルなデグーがふいに現れます。壁紙はそのまま。マウス操作も邪魔しません。</p>
         <div class="actions">
-          <a class="button primary" href="https://github.com/UDteach/DeguGatekeeper/releases/latest">アプリをダウンロード <span>↗</span></a>
+          <a class="button primary" href="download.html">アプリをダウンロード <span>↗</span></a>
           <a class="button secondary" href="#how">どんなアプリ？ <span>↓</span></a>
         </div>
-        <p class="release-note">13の毛色と3つの動き。毛色は複数選択できます。</p>
+        <p class="release-note">13の毛色と3つの動き。毛色は複数選択できます。デモ画面では実際の透過動画を試せます。</p>
       </div>
       <div class="desktop" aria-label="デスクトップに現れるデグーのイメージ">
         <div class="desktop-bar"><span>● ● ●</span><span>9:41</span></div>
         <div class="desktop-window"><div class="window-dots">● ● ●</div><div class="window-lines"><i></i><i></i><i></i><i></i></div></div>
-        <img class="hero-degu" src="assets/colors/agouti.png" alt="アグーチカラーのリアルなデグー">
+        <img class="hero-degu hero-degu-fallback" src="assets/colors/agouti.png" alt="アグーチカラーのリアルなデグー">
+        <video class="hero-degu-video" id="demo-video" muted playsinline preload="auto" aria-label="アグーチカラーのデグーが下からぴょこっと現れる動画" src="assets/demo/agouti-a-bottom-pop.webm"></video>
+        <div class="demo-controls" id="demo-controls" role="group" aria-label="デグーの動きを選ぶ" hidden>
+          <button type="button" data-demo="agouti-a-bottom-pop.webm" data-label="下からぴょこ" aria-pressed="true">下から</button>
+          <button type="button" data-demo="agouti-b-side-peek.webm" data-label="端からのぞく" aria-pressed="false">端から</button>
+          <button type="button" data-demo="agouti-c-center-hop.webm" data-label="跳び込む" aria-pressed="false">跳び込む</button>
+        </div>
         <div class="desktop-label">壁紙の上に、そっと重ねて表示</div>
       </div>
     </section>
     <section class="features" id="how">
-      <div class="section-heading"><span class="eyebrow">HOW IT WORKS</span><h2>いつもの画面に、<br>小さなサプライズ。</h2></div>
+      <div class="section-heading"><span class="eyebrow">使い方</span><h2>いつもの画面に、<br>小さなサプライズ。</h2></div>
       <div class="feature-grid">
         <article><span class="feature-icon">01</span><h3>たまに現れる</h3><p>下から顔を出す、端からのぞく、跳び込む。3つの短い動きをランダムに再生します。</p></article>
         <article><span class="feature-icon">02</span><h3>壁紙はそのまま</h3><p>透明なウィンドウを重ねる方式。今の壁紙やデスクトップの配置を変えません。</p></article>
@@ -42,7 +49,7 @@
       </div>
     </section>
     <section class="colors" id="colors">
-      <div class="section-heading"><span class="eyebrow">COLORS</span><h2>いろんな毛色の子たち。</h2><p>ImageGenで1色ずつ作った写真風の基準画像から、各3動作の動画を制作しました。</p></div>
+      <div class="section-heading"><span class="eyebrow">毛色</span><h2>いろんな毛色の子たち。</h2><p>13種類の毛色を収録。どの子も3つの動きで現れます。</p></div>
       <div class="color-grid">
         <figure><img src="assets/colors/agouti.png" alt="アグーチ"><figcaption>アグーチ</figcaption></figure>
         <figure><img src="assets/colors/sand.png" alt="サンド"><figcaption>サンド</figcaption></figure>
@@ -59,8 +66,8 @@
         <figure><img src="assets/colors/black_pied.png" alt="ブラックパイド"><figcaption>ブラックパイド</figcaption></figure>
       </div>
     </section>
-    <section class="download" id="download"><div><span class="eyebrow">GET STARTED</span><h2>デグーを、あなたの画面にも。</h2><p>Mac（macOS 12以降、Intel・Apple Silicon）と Windows のインストーラーを GitHub Releases からダウンロードできます。Mac は Intel なら通常の DMG、M1 以降なら arm64 の DMG を選んでください。</p></div><a class="button primary" href="https://github.com/UDteach/DeguGatekeeper/releases/latest">ダウンロード ↗</a></section>
+    <section class="download" id="download"><div><span class="eyebrow">ダウンロード</span><h2>デグーを、あなたの画面にも。</h2><p>Mac（macOS 12以降、Intel・Apple Silicon）と Windows のインストーラーを、専用ページから直接ダウンロードできます。</p></div><a class="button primary" href="download.html">ダウンロード ↗</a></section>
   </main>
-  <footer><span>Degu Gatekeeper</span><span>Made with ImageGen and Google Flow · <a href="https://github.com/UDteach/DeguGatekeeper">Source on GitHub</a></span></footer>
+  <footer><span>Degu Desktop for Real</span><span>画像・動画の制作に ImageGen と Google Flow を使用しました。 · <a href="https://github.com/UDteach/DeguDesktopForReal">GitHub</a></span></footer>
 </body>
 </html>

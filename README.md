@@ -1,10 +1,10 @@
-# Degu Gatekeeper
+# Degu Desktop for Real
 
 壁紙を変えず、リアルなデグーがときどきデスクトップに現れるアプリです。透明なクリック透過ウィンドウで3種類の短い動きを再生します。Mac と Windows に対応します。Mac 版は Intel・Apple Silicon の両方を用意し、macOS 12 Monterey 以降で動作します。
 
-**[紹介ページ](https://udteach.github.io/DeguGatekeeper/)** · **[Mac / Windows ダウンロード](https://github.com/UDteach/DeguGatekeeper/releases/latest)**
+**[紹介ページ](https://udteach.github.io/DeguDesktopForReal/)** · **[Mac / Windows ダウンロード](https://udteach.github.io/DeguDesktopForReal/download.html)**
 
-Mac のダウンロードでは、Intel 搭載機は名前に `arm64` が付かない DMG、M1 以降の Apple Silicon 搭載機は `arm64.dmg` を選んでください。対応 OS は macOS 12 Monterey 以降です。
+Mac のダウンロードでは、Intel 搭載機は Intel 用 DMG、M1 以降の Apple Silicon 搭載機は Apple Silicon 用 DMG を選んでください。対応 OS は macOS 12 Monterey 以降です。
 
 ## 使い方
 
@@ -21,7 +21,7 @@ npm ci
 npm start
 ```
 
-配布物は GitHub Actions がタグ `v*` のプッシュで Mac（Apple Silicon / Intel）と Windows（x64）をビルドし、GitHub Releases に追加します。サイトは `docs/` を GitHub Pages に公開します。
+配布物は GitHub Actions がタグ `v*` のプッシュで Mac（Apple Silicon / Intel）と Windows（x64）をビルドし、GitHub Releases に追加します。サイトは `docs/` を GitHub Pages に公開します。リリースファイル名はバージョンによらず固定し、専用ページから最新版を直接ダウンロードできるようにします。
 
 動画素材は `assets/videos/{毛色}-{動作}.webm` に置きます。動作名は `a-bottom-pop`、`b-side-peek`、`c-center-hop`。VP9 のアルファ付き WebM を使います。Flow で生成した緑背景の MP4 を保存したら、`python3 scripts/process_clip.py 入力.mp4 assets/videos/毛色-動作.webm --keep-source` で透過動画にできます。配布前に `python3 scripts/audit_videos.py` で全39本を検査します。詳しくは [制作メモ](concept/README.md) と [クロマキー処理](scripts/key_chroma.py) を参照してください。
 
