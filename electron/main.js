@@ -64,7 +64,8 @@ function discoverColors() {
   const files = fs.existsSync(videoDir()) ? fs.readdirSync(videoDir()) : [];
   const ids = [...new Set(files.map((name) => name.match(/^(.+)-a-bottom-pop\.webm$/)?.[1]).filter(Boolean))];
   availableColors = ids.filter((id) => motions.every((motion) => files.includes(`${id}-${motion.id}.webm`)));
-  settings.colors = [...new Set(settings.colors)].filter((id) => availableColors.includes(id));
+  settings.colors = [...new Set(settings.colors.map((id) => id === 'gray' ? 'blue' : id))]
+    .filter((id) => availableColors.includes(id));
   if (!settings.allColors && settings.colors.length === 0 && availableColors.length) {
     settings.colors = [availableColors.includes('agouti') ? 'agouti' : availableColors[0]];
   }

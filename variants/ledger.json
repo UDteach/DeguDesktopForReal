@@ -14,8 +14,13 @@
       "kind": "solid",
       "coat": "#947E68",
       "reference": "https://store.line.me/stickershop/product/36512491/ja",
-      "status": "accepted-source",
-      "imagegen_reference": "concept/degu-agouti-chroma-reference.png"
+      "status": "video-ready-720p",
+      "imagegen_reference": "concept/degu-agouti-chroma-reference.png",
+      "videos": [
+        "assets/videos/agouti-a-bottom-pop.webm",
+        "assets/videos/agouti-b-side-peek.webm",
+        "assets/videos/agouti-c-center-hop.webm"
+      ]
     },
     {
       "id": "sand",
@@ -90,8 +95,13 @@
       "kind": "solid",
       "coat": "#6B4B3C",
       "reference": "https://store.line.me/stickershop/product/36756903/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/chocolate-v1.png"
+      "status": "video-ready-1080p",
+      "imagegen_reference": "variants/imagegen/chocolate-v1.png",
+      "videos": [
+        "assets/videos/chocolate-a-bottom-pop.webm",
+        "assets/videos/chocolate-b-side-peek.webm",
+        "assets/videos/chocolate-c-center-hop.webm"
+      ]
     },
     {
       "id": "lilac",
