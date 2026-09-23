@@ -1,6 +1,6 @@
 {
   "name": "degu-gatekeeper",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "private": true,
   "author": "UDteach",
   "description": "A little degu that occasionally appears over your desktop",
@@ -17,7 +17,8 @@
   },
   "build": {
     "appId": "com.kdevelopk.degugatekeeper",
-    "productName": "Degu Gatekeeper",
+    "productName": "Degu Desktop for Real",
+    "artifactName": "DeguDesktopForReal-${os}-${arch}.${ext}",
     "directories": { "output": "release-build" },
     "files": ["electron/**/*", "assets/icons/tray.png", "package.json"],
     "extraResources": [

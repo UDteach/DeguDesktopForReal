@@ -215,7 +215,7 @@ app.whenReady().then(() => {
   discoverColors();
   const trayIcon = nativeImage.createFromPath(path.join(__dirname, '..', 'assets', 'icons', 'tray.png'));
   tray = new Tray(trayIcon);
-  tray.setToolTip('Degu Gatekeeper');
+  tray.setToolTip('Degu Desktop for Real');
   refreshMenu();
   setTimeout(playNext, 600);
 });
