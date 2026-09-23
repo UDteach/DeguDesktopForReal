@@ -23,8 +23,13 @@
       "kind": "solid",
       "coat": "#BFA37D",
       "reference": "https://store.line.me/stickershop/product/36552770/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/sand-v1.png"
+      "status": "video-ready-1080p",
+      "imagegen_reference": "variants/imagegen/sand-v1.png",
+      "videos": [
+        "assets/videos/sand-a-bottom-pop.webm",
+        "assets/videos/sand-b-side-peek.webm",
+        "assets/videos/sand-c-center-hop.webm"
+      ]
     },
     {
       "id": "white",
@@ -32,8 +37,13 @@
       "kind": "solid",
       "coat": "#E1DEDA",
       "reference": "https://store.line.me/stickershop/product/36552733/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/white-v1.png"
+      "status": "video-ready-1080p",
+      "imagegen_reference": "variants/imagegen/white-v1.png",
+      "videos": [
+        "assets/videos/white-a-bottom-pop.webm",
+        "assets/videos/white-b-side-peek.webm",
+        "assets/videos/white-c-center-hop.webm"
+      ]
     },
     {
       "id": "black",
@@ -41,8 +51,13 @@
       "kind": "solid",
       "coat": "#514C4A",
       "reference": "https://store.line.me/stickershop/product/36552738/ja",
-      "status": "imagegen-reference-ready",
-      "imagegen_reference": "variants/imagegen/black-v1.png"
+      "status": "video-ready-1080p",
+      "imagegen_reference": "variants/imagegen/black-v1.png",
+      "videos": [
+        "assets/videos/black-a-bottom-pop.webm",
+        "assets/videos/black-b-side-peek.webm",
+        "assets/videos/black-c-center-hop.webm"
+      ]
     },
     {
       "id": "blue",

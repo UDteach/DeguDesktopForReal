@@ -24,8 +24,9 @@ let overlay;
 let nextTimer;
 let stopTimer;
 let lastMotion = -1;
+let lastColor;
 let paused = false;
-let settings = { frequency: 1, size: 1, color: 'agouti' };
+let settings = { frequency: 1, size: 1, allColors: true, colors: [] };
 let availableColors = [];
 
 function videoDir() {
@@ -43,7 +44,14 @@ function loadSettings() {
     const saved = JSON.parse(fs.readFileSync(settingsPath(), 'utf8'));
     if (Number.isInteger(saved.frequency) && frequencies[saved.frequency]) settings.frequency = saved.frequency;
     if (Number.isInteger(saved.size) && sizes[saved.size]) settings.size = saved.size;
-    if (typeof saved.color === 'string') settings.color = saved.color;
+    if (Array.isArray(saved.colors)) {
+      settings.colors = saved.colors.filter((id) => typeof id === 'string');
+      if (typeof saved.allColors === 'boolean') settings.allColors = saved.allColors;
+    } else if (typeof saved.color === 'string') {
+      // Keep the user's choice from the original single-color menu.
+      settings.colors = [saved.color];
+      settings.allColors = false;
+    }
   } catch { /* defaults on first launch */ }
 }
 
@@ -56,7 +64,28 @@ function discoverColors() {
   const files = fs.existsSync(videoDir()) ? fs.readdirSync(videoDir()) : [];
   const ids = [...new Set(files.map((name) => name.match(/^(.+)-a-bottom-pop\.webm$/)?.[1]).filter(Boolean))];
   availableColors = ids.filter((id) => motions.every((motion) => files.includes(`${id}-${motion.id}.webm`)));
-  if (!availableColors.includes(settings.color)) settings.color = availableColors[0] || 'agouti';
+  settings.colors = [...new Set(settings.colors)].filter((id) => availableColors.includes(id));
+  if (!settings.allColors && settings.colors.length === 0 && availableColors.length) {
+    settings.colors = [availableColors.includes('agouti') ? 'agouti' : availableColors[0]];
+  }
+}
+
+function selectedColors() {
+  return settings.allColors ? availableColors : settings.colors;
+}
+
+function toggleColor(id) {
+  if (settings.allColors) {
+    settings.allColors = false;
+    settings.colors = availableColors.filter((color) => color !== id);
+    if (settings.colors.length === 0) settings.colors = [id];
+  } else if (settings.colors.includes(id)) {
+    if (settings.colors.length > 1) settings.colors = settings.colors.filter((color) => color !== id);
+  } else {
+    settings.colors.push(id);
+  }
+  saveSettings();
+  refreshMenu();
 }
 
 function menu() {
@@ -70,10 +99,19 @@ function menu() {
     { label: '今すぐ表示', click: playNext },
     { label: paused ? '再開' : '一時停止', click: () => { paused = !paused; stop(); if (!paused) schedule(); refreshMenu(); } },
     { type: 'separator' },
-    { label: '毛色', submenu: availableColors.map((id) => ({
-      label: colorNames[id] || id, type: 'radio', checked: settings.color === id,
-      click: () => { settings.color = id; saveSettings(); refreshMenu(); },
-    })) },
+    { label: '毛色', submenu: [
+      { label: '全色ランダム', type: 'checkbox', checked: settings.allColors,
+        click: () => {
+          settings.allColors = !settings.allColors;
+          if (!settings.allColors && settings.colors.length === 0) settings.colors = [...availableColors];
+          saveSettings(); refreshMenu();
+        } },
+      { type: 'separator' },
+      ...availableColors.map((id) => ({
+        label: colorNames[id] || id, type: 'checkbox',
+        checked: selectedColors().includes(id), click: () => toggleColor(id),
+      })),
+    ] },
     { label: '出現間隔', submenu: frequencies.map((item, index) => ({
       label: item.label, type: 'radio', checked: settings.frequency === index,
       click: () => { settings.frequency = index; saveSettings(); schedule(); refreshMenu(); },
@@ -135,7 +173,11 @@ function playNext() {
   const choices = motions.map((_, index) => index).filter((index) => index !== lastMotion);
   lastMotion = choices[Math.floor(Math.random() * choices.length)];
   const motion = motions[lastMotion];
-  const file = path.join(videoDir(), `${settings.color}-${motion.id}.webm`);
+  const colors = selectedColors();
+  const colorChoices = colors.length > 1 ? colors.filter((id) => id !== lastColor) : colors;
+  const color = colorChoices[Math.floor(Math.random() * colorChoices.length)];
+  lastColor = color;
+  const file = path.join(videoDir(), `${color}-${motion.id}.webm`);
   if (!fs.existsSync(file)) { schedule(); return; }
   const display = screen.getDisplayNearestPoint(screen.getCursorScreenPoint());
   const { x, y, width, height } = display.bounds;

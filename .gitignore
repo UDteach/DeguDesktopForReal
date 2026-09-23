@@ -8,8 +8,15 @@ assets/icons/app.iconset/
 concept/flow-alpha/
 concept/flow-alpha-v1/
 concept/flow-alpha-v2/
+concept/flow-alpha-rekeyed/
+concept/flow-raw/*.mp4
 concept/flow-raw/qa/
+assets/videos/*.part.webm
 concept/previews/
 variants/rejected-recolor-trial/
 variants/imagegen/rejected/
 scripts/__pycache__/
+# Local Swift prototype; published app uses Electron.
+Info.plist
+Sources/
+scripts/build.sh

@@ -76,3 +76,9 @@ The degu makes one short natural hop from below the lower-left edge into the cen
 ### 緑の縁の修正（2026-09-23）
 
 元動画の緑は純粋な `#00FF00` ではなく、場面によって約 `#11DF21` などに変化していた。旧版の一定色に対するクロマキーでは、毛先の半透明部分に色かぶりが残った。`scripts/key_chroma.py` で各フレームの背景色を測ってアルファを作り、輪郭の色を毛の内側から延長した。さらに半透明の縁の緑成分を抑えた。以前の出力は `flow-alpha-v1/` と `flow-alpha-v2/` に保存し、上の透過 MOV・WebM とプレビューを修正版に差し替えた。3本の0.5・1.5・2.5・3.5秒を明色・暗色背景で確認済み。B の耳付近（1.5秒）の半透明画素では、緑成分が赤・青の中間値より8以上強い画素が1319から0になった。B の足元の薄い影は元動画由来として残る。
+
+## 毛色追加と1080p（2026-09-23）
+
+サンドとホワイトは、毛色ごとに ImageGen で作った基準画像を Flow に渡し、A/B/C の3動作をそれぞれ生成した。Google Flow Pro の1080pアップスケールを Chrome で行い、保存した1920×1080・4秒の MP4 を `scripts/process_clip.py` で緑抜きしてアルファ付き VP9 WebM にした。配布用ファイルは `assets/videos/` に置き、元の MP4 はローカルの `flow-raw/` に保管する。
+
+`process_clip.py` は `key_chroma.py` と同じ輪郭補正を使い、ProRes の中間ファイルを作らず直接 WebM にする。出力の `alpha_mode=1` を確認してから採用する。
