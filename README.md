@@ -1,8 +1,10 @@
 # Degu Gatekeeper
 
-壁紙を変えず、リアルなデグーがときどきデスクトップに現れるアプリです。透明なクリック透過ウィンドウで3種類の短い動きを再生します。Mac と Windows に対応します。
+壁紙を変えず、リアルなデグーがときどきデスクトップに現れるアプリです。透明なクリック透過ウィンドウで3種類の短い動きを再生します。Mac と Windows に対応します。Mac 版は Intel・Apple Silicon の両方を用意し、macOS 12 Monterey 以降で動作します。
 
 **[紹介ページ](https://udteach.github.io/DeguGatekeeper/)** · **[Mac / Windows ダウンロード](https://github.com/UDteach/DeguGatekeeper/releases/latest)**
+
+Mac のダウンロードでは、Intel 搭載機は名前に `arm64` が付かない DMG、M1 以降の Apple Silicon 搭載機は `arm64.dmg` を選んでください。対応 OS は macOS 12 Monterey 以降です。
 
 ## 使い方
 
