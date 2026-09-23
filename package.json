@@ -1,5 +1,5 @@
 {
-  "name": "degu-gatekeeper",
+  "name": "degu-desktop-for-real",
   "version": "0.4.0",
   "private": true,
   "author": "UDteach",
@@ -16,7 +16,7 @@
     "electron-builder": "26.15.3"
   },
   "build": {
-    "appId": "com.kdevelopk.degugatekeeper",
+    "appId": "com.kdevelopk.degudesktopforreal",
     "productName": "Degu Desktop for Real",
     "artifactName": "DeguDesktopForReal-${os}-${arch}.${ext}",
     "directories": { "output": "release-build" },

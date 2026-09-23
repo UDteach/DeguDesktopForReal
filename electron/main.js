@@ -28,6 +28,7 @@ let lastColor;
 let paused = false;
 let settings = { frequency: 1, size: 1, allColors: true, colors: [] };
 let availableColors = [];
+let migratedSettings = false;
 
 function videoDir() {
   return app.isPackaged
@@ -41,7 +42,11 @@ function settingsPath() {
 
 function loadSettings() {
   try {
-    const saved = JSON.parse(fs.readFileSync(settingsPath(), 'utf8'));
+    const current = settingsPath();
+    const legacy = path.join(app.getPath('appData'), 'degu-gatekeeper', 'settings.json');
+    const source = fs.existsSync(current) ? current : legacy;
+    const saved = JSON.parse(fs.readFileSync(source, 'utf8'));
+    migratedSettings = source === legacy;
     if (Number.isInteger(saved.frequency) && frequencies[saved.frequency]) settings.frequency = saved.frequency;
     if (Number.isInteger(saved.size) && sizes[saved.size]) settings.size = saved.size;
     if (Array.isArray(saved.colors)) {
@@ -213,6 +218,7 @@ app.whenReady().then(() => {
   if (process.platform === 'darwin') app.dock.hide();
   loadSettings();
   discoverColors();
+  if (migratedSettings) saveSettings();
   const trayIcon = nativeImage.createFromPath(path.join(__dirname, '..', 'assets', 'icons', 'tray.png'));
   tray = new Tray(trayIcon);
   tray.setToolTip('Degu Desktop for Real');
