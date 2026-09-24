@@ -188,7 +188,9 @@ flowchart LR
 | --- | --- | --- | --- |
 | Mode settings | One bilingual form with quick tray toggles | `modes-ja.png`, `modes-en.png` | None at 500×600 |
 | Countdown | Optional small click-through overlay | `timer-focus.png` | None at 190×64 |
-| Swarm | Five separate animals visible together | `swarm.png` | None at 1440×900 |
+| Swarm | Side peeks meet the left/right screen edges; bottom pops meet the bottom edge; one hop remains inside | `swarm.png` | None at 1440×900 |
+
+In v0.5.1, the swarm slots follow each clip's entry direction. The left side-peek is mirrored so its cut edge lands on the left screen edge. A 1440×900 playback capture confirms the five clips decode and no animal is cut at an interior video boundary.
 | Tray guide | Clear steps in both languages on narrow screens | `guide-ja-mobile.png`, `guide-en-mobile.png` | None at 390 px and 320 px |
 
 ## Reference provenance / 参照元

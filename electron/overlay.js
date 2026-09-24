@@ -32,6 +32,7 @@ window.degu.onPlay(({ clips: items }) => {
     clip.style.width = `${item.scale * 100}%`;
     clip.style.left = `${item.left * 100}%`;
     clip.style.bottom = `${item.bottom * 100}%`;
+    if (item.flip) clip.style.transform = 'scaleX(-1)';
     clip.addEventListener('ended', finished, { once: true });
     clip.addEventListener('error', finished, { once: true });
     clip.src = item.url;

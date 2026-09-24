@@ -455,17 +455,22 @@ function playNext(manual = false) {
   const epoch = playbackEpoch;
   const colors = selectedColors();
   const usedColors = new Set();
-  const placements = settings.modes.chaos
-    ? [{ left: 0, bottom: 0 }, { left: 0.52, bottom: 0 }, { left: 0.26, bottom: 0.28 },
-      { left: 0.02, bottom: 0.52 }, { left: 0.52, bottom: 0.52 }]
-    : [{ left: 0, bottom: 0 }];
   const scale = settings.modes.chaos
     ? Math.min(0.48, Math.max(0.34, sizes[settings.size].scale * 0.72))
     : sizes[settings.size].scale;
+  const placements = settings.modes.chaos
+    ? [
+      { motion: motions[0], left: 0, bottom: 0 },
+      { motion: motions[0], left: 1 - scale, bottom: 0 },
+      { motion: motions[1], left: 0, bottom: 0.47, flip: true },
+      { motion: motions[1], left: 1 - scale, bottom: 0.47 },
+      { motion: motions[2], left: (1 - scale) / 2, bottom: 0.22 },
+    ]
+    : [{ bottom: 0 }];
   const clips = placements.map((position) => {
     const motionChoices = motions.map((_, index) => index).filter((index) => index !== lastMotion);
-    lastMotion = motionChoices[Math.floor(Math.random() * motionChoices.length)];
-    const motion = motions[lastMotion];
+    const motion = position.motion || motions[motionChoices[Math.floor(Math.random() * motionChoices.length)]];
+    lastMotion = motions.indexOf(motion);
     let choices = colors.filter((id) => id !== lastColor && !usedColors.has(id));
     if (choices.length === 0) choices = colors.filter((id) => id !== lastColor);
     if (choices.length === 0) choices = colors;
@@ -476,7 +481,7 @@ function playNext(manual = false) {
     const left = settings.modes.chaos ? position.left :
       motion.anchor === 'center' ? (1 - scale) / 2 : motion.anchor === 'right' ? 1 - scale : 0;
     return { url: require('node:url').pathToFileURL(file).href,
-      left, bottom: position.bottom, scale };
+      left, bottom: position.bottom, scale, flip: Boolean(position.flip) };
   });
   const display = screen.getDisplayNearestPoint(screen.getCursorScreenPoint());
   const { x, y, width, height } = display.bounds;

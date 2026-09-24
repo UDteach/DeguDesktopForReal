@@ -98,7 +98,19 @@ test('tray switches Pomodoro, countdown visibility, and swarm playback', () => {
 
   item('デグー大発生モード').click();
   assert.equal(saved().modes.chaos, true);
-  assert.equal(overlay.sent.at(-1).payload.clips.length, 5);
+  const swarm = overlay.sent.at(-1).payload.clips;
+  assert.equal(swarm.length, 5);
+  const bottomPops = swarm.filter((clip) => clip.url.includes('-a-bottom-pop.webm'));
+  const sidePeeks = swarm.filter((clip) => clip.url.includes('-b-side-peek.webm'));
+  const centerHops = swarm.filter((clip) => clip.url.includes('-c-center-hop.webm'));
+  assert.equal(bottomPops.length, 2);
+  assert.equal(sidePeeks.length, 2);
+  assert.equal(centerHops.length, 1);
+  assert.ok(bottomPops.every((clip) => clip.bottom === 0));
+  assert.equal(sidePeeks[0].left, 0);
+  assert.equal(sidePeeks[0].flip, true);
+  assert.equal(sidePeeks[1].left, 1 - sidePeeks[1].scale);
+  assert.equal(sidePeeks[1].flip, false);
 
   item('モードの設定…').click();
   const dialog = windows.at(-1);

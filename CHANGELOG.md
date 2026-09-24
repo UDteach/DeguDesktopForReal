@@ -1,5 +1,15 @@
 # 更新履歴 / Changelog
 
+## v0.5.1 — 2026-09-24
+
+### 日本語
+
+- デグー大発生モードで、横から顔を出すデグーを画面の左右端に、下から出るデグーを画面下端に固定しました。左端のデグーは動画を左右反転して表示します。画面の途中で身体が切れて見える配置を修正しました。
+
+### English
+
+- Anchored side-peeking degus to the left and right screen edges and bottom-popping degus to the bottom edge in swarm mode. The left-side clip is mirrored. This fixes animals appearing cut off in the middle of the screen.
+
 ## v0.5.0 — 2026-09-24
 
 ### 日本語
