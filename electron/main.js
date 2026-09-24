@@ -48,6 +48,8 @@ const copy = {
 const colorNames = {
   agouti: { ja: 'アグーチ', en: 'Agouti' },
   sand: { ja: 'サンド', en: 'Sand' },
+  yellow_sand: { ja: 'イエローサンド', en: 'Yellow Sand' },
+  cream: { ja: 'クリーム', en: 'Cream' },
   white: { ja: 'ホワイト', en: 'White' },
   black: { ja: 'ブラック', en: 'Black' },
   blue: { ja: 'ブルー（グレー）', en: 'Blue (Gray)' },
@@ -57,6 +59,7 @@ const colorNames = {
   agouti_pied: { ja: 'アグーチパイド', en: 'Agouti Pied' },
   sand_pied: { ja: 'サンドパイド', en: 'Sand Pied' },
   blue_pied: { ja: 'ブルーパイド', en: 'Blue Pied' },
+  violet_pied: { ja: 'バイオレットパイド', en: 'Violet Pied' },
   cream_pied: { ja: 'クリームパイド', en: 'Cream Pied' },
   black_pied: { ja: 'ブラックパイド', en: 'Black Pied' },
 };

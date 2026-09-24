@@ -1,5 +1,19 @@
 # 更新履歴 / Changelog
 
+## v0.6.0 — 2026-09-24
+
+### 日本語
+
+- イエローサンド、単色クリーム、バイオレットパイドの3色を追加し、16色×3動作になりました。各毛色の基準画像をImageGenで作り、Google Flowで動きを生成した透過WebMを収録しています。
+- イエローサンドはサンドを黄色寄りにした見た目のバリエーションです。単色クリームはLINEスタンプのクリームパイドを、バイオレットパイドは同名のLINEスタンプを参考に制作しました。
+- 日本語・英語の紹介ページとGitHubのREADMEに更新履歴を追加しました。
+
+### English
+
+- Added Yellow Sand, solid Cream, and Violet Pied, bringing the app to 16 coats with three motions each. Each coat has an ImageGen appearance reference and transparent motion clips generated with Google Flow.
+- Yellow Sand is a more golden visual variation of Sand. Solid Cream takes its color from the Cream Pied LINE sticker; Violet Pied references the sticker of the same name.
+- Added an update history to the Japanese and English website and the GitHub README.
+
 ## v0.5.1 — 2026-09-24
 
 ### 日本語

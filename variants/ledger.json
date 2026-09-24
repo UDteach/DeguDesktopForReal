@@ -1,6 +1,6 @@
 {
   "source": "https://store.line.me/stickershop/author/6633487/ja",
-  "source_note": "LINEの毛色名とサムネイルを参考にした。RGB値はImageGenへの指示用の目安で、スタンプのピクセルを複製したものではない。",
+  "source_note": "LINEの毛色名とサムネイルを参考にした。イエローサンドはサンドを黄色寄りにした見た目のバリエーションで、独立した遺伝的毛色としては扱わない。RGB値はImageGenへの指示用の目安で、スタンプのピクセルを複製したものではない。",
   "production_method": "ImageGenで毛色ごとの写真風基準画像を1枚ずつ生成し、採用画像を参照して既存の3動作を動画化する。機械的な色替え試作は rejected-recolor-trial に隔離した。",
   "motion_sources": {
     "a": "concept/flow-alpha/agouti-a-bottom-pop.mov",
@@ -45,6 +45,47 @@
         "b-side-peek": "1080p",
         "c-center-hop": "1080p"
       }
+    },
+    {
+      "id": "yellow_sand",
+      "name": "イエローサンド",
+      "kind": "appearance-variation",
+      "coat": "#D6AD60",
+      "reference": "https://store.line.me/stickershop/product/36552770/ja",
+      "status": "video-ready-1080p",
+      "imagegen_reference": "variants/imagegen/yellow_sand-v1.png",
+      "videos": [
+        "assets/videos/yellow_sand-a-bottom-pop.webm",
+        "assets/videos/yellow_sand-b-side-peek.webm",
+        "assets/videos/yellow_sand-c-center-hop.webm"
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "1080p",
+        "b-side-peek": "1080p",
+        "c-center-hop": "1080p"
+      },
+      "base": "sand",
+      "note": "サンドの黄色みを強めた見た目のバリエーション。独立した遺伝的毛色という主張ではない。"
+    },
+    {
+      "id": "cream",
+      "name": "クリーム",
+      "kind": "solid",
+      "coat": "#E3C9B0",
+      "reference": "https://store.line.me/stickershop/product/36552747/ja",
+      "status": "video-ready-1080p",
+      "imagegen_reference": "variants/imagegen/cream-v1.png",
+      "videos": [
+        "assets/videos/cream-a-bottom-pop.webm",
+        "assets/videos/cream-b-side-peek.webm",
+        "assets/videos/cream-c-center-hop.webm"
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "1080p",
+        "b-side-peek": "1080p",
+        "c-center-hop": "1080p"
+      },
+      "note": "LINEのクリームパイドを参照し、白斑のない単色クリームとして制作。"
     },
     {
       "id": "white",
@@ -171,6 +212,27 @@
         "b-side-peek": "720p",
         "c-center-hop": "720p"
       }
+    },
+    {
+      "id": "violet_pied",
+      "name": "バイオレットパイド",
+      "kind": "pied",
+      "coat": "#827981",
+      "reference": "https://store.line.me/stickershop/product/36837079/ja",
+      "status": "video-ready-1080p",
+      "imagegen_reference": "variants/imagegen/violet_pied-v1.png",
+      "videos": [
+        "assets/videos/violet_pied-a-bottom-pop.webm",
+        "assets/videos/violet_pied-b-side-peek.webm",
+        "assets/videos/violet_pied-c-center-hop.webm"
+      ],
+      "video_resolution": {
+        "a-bottom-pop": "1080p",
+        "b-side-peek": "1080p",
+        "c-center-hop": "1080p"
+      },
+      "base": "violet",
+      "patch": "#EAE6E3"
     },
     {
       "id": "agouti_pied",
