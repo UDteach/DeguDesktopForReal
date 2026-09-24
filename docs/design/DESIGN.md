@@ -6,7 +6,7 @@
 - Status: verified
 - Owner: Codex
 - Last verified: 2026-09-24
-- Target release or task: v0.4.1 bilingual pages and mobile motion controls
+- Target release or task: v0.5.0 modes and tray guide
 
 ## Product and primary job / 対象と主目的
 
@@ -166,6 +166,30 @@ flowchart LR
 ## Open decisions / 未決事項
 
 - None.
+
+## v0.5.0 mode settings and tray guide
+
+- Primary job: Start or stop Pomodoro and Degu swarm from the tray, then adjust focus and break lengths without searching through many menus.
+- Baseline: The existing interval dialog sets the app's quiet cream and green form style. The product page explained app behavior but did not tell people where to find the tray controls. ![Existing interval dialog](evidence/baseline/interval-ja.png)
+- Constraints: Keep the desktop wallpaper and clicks intact; keep the app bilingual; keep the timer optional and click-through; show five animals in swarm mode without requiring a new video asset.
+- Directions considered: **Tray-only** would bury duration fields; **separate windows per mode** would repeat controls; **one grouped settings window plus quick tray toggles** keeps frequent actions immediate and fields together. Selected the grouped window.
+- Selected hierarchy: Pomodoro toggle and durations, countdown visibility, swarm toggle, then Save. The site guide first explains the paw icon's location, then the three new actions. Existing colors, field shapes, and typography are reused.
+- Interaction: Turning Pomodoro on starts a focus period. Its countdown can be hidden without stopping the timer. Focus suppresses automatic animals; a break begins with an animal. Swarm shows five clips at once and honors focus suppression. The explicit Show now command remains available.
+- Verification: The Japanese and English settings windows fit at 500×600 with no overflow; the 190×64 timer fits focus and break labels; five alpha WebMs play simultaneously and clear on stop. The Japanese and English site guides have no horizontal overflow at 1440, 390, or 320 px.
+
+![Japanese mode settings](evidence/after/modes-ja.png)
+![English mode settings](evidence/after/modes-en.png)
+![Focus countdown](evidence/after/timer-focus.png)
+![Five degu swarm](evidence/after/swarm.png)
+![Japanese mobile tray guide](evidence/after/guide-ja-mobile.png)
+![English mobile tray guide](evidence/after/guide-en-mobile.png)
+
+| State | Intended result | Evidence | Mismatch |
+| --- | --- | --- | --- |
+| Mode settings | One bilingual form with quick tray toggles | `modes-ja.png`, `modes-en.png` | None at 500×600 |
+| Countdown | Optional small click-through overlay | `timer-focus.png` | None at 190×64 |
+| Swarm | Five separate animals visible together | `swarm.png` | None at 1440×900 |
+| Tray guide | Clear steps in both languages on narrow screens | `guide-ja-mobile.png`, `guide-en-mobile.png` | None at 390 px and 320 px |
 
 ## Reference provenance / 参照元
 

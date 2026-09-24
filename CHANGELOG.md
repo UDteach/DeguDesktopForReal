@@ -1,5 +1,21 @@
 # 更新履歴 / Changelog
 
+## v0.5.0 — 2026-09-24
+
+### 日本語
+
+- ポモドーロモードを追加しました。集中25分、短い休憩5分、4回目の長い休憩15分が初期値です。集中中はデグーの自動表示を休み、休憩開始時に現れます。各時間は変更できます。
+- 集中・休憩の残り時間を画面右上に表示する切り替えを追加しました。タイマー表示はクリックを妨げません。
+- デグー大発生モードを追加しました。5匹が同時に現れ、動きが終わると1〜4秒後に次の群れが出ます。
+- 紹介ページに、MacのメニューバーとWindowsの通知領域から設定する手順を日本語・英語で追加しました。
+
+### English
+
+- Added Pomodoro mode with 25-minute focus, 5-minute breaks, and a 15-minute break after every fourth focus period by default. Degus stay away during focus and appear when a break begins. Durations are adjustable.
+- Added an optional countdown at the top right of the screen. It does not block clicks.
+- Added Degu swarm mode: five degus appear together, followed by another swarm 1–4 seconds after they finish.
+- Added Japanese and English instructions for the Mac menu bar and Windows system tray to the product page.
+
 ## v0.4.1 — 2026-09-24
 
 ### 日本語

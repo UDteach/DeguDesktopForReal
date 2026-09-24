@@ -23,6 +23,7 @@ jobs:
           node-version: '24'
           cache: npm
       - run: npm ci
+      - run: npm test
       - name: Build Mac (Intel and Apple Silicon)
         if: runner.os == 'macOS'
         run: npx electron-builder --mac dmg zip --x64 --arm64 --publish never
