@@ -1,5 +1,17 @@
 # 更新履歴 / Changelog
 
+## v0.6.1 — 2026-09-25
+
+### 日本語
+
+- 16色×3動作の全48本を、Google Flowの1080p版から作り直した透過WebMに統一しました。従来720pだった22本を更新しています。
+- 配布前の動画検査で、解像度、透過情報、長さと毛色台帳の記載が一致することを確認します。
+
+### English
+
+- Updated the 22 clips that were still 720p. All 48 transparent WebM clips across 16 coats and three motions now use Google Flow's 1080p exports.
+- The pre-release video audit now checks resolution, transparency, duration, and the coat ledger.
+
 ## v0.6.0 — 2026-09-24
 
 ### 日本語

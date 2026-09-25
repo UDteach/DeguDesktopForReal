@@ -29,10 +29,14 @@ def main() -> int:
         if variant["status"] == "alias-of-blue":
             continue
         color = variant["id"]
+        if variant["status"] != "video-ready-1080p":
+            errors.append(f"{color}: ledger status is not video-ready-1080p")
         expected = [f"assets/videos/{color}-{motion}.webm" for motion in MOTIONS]
         if variant.get("videos") != expected:
             errors.append(f"{color}: ledger videos do not match the three motions")
-        for relative in expected:
+        for motion, relative in zip(MOTIONS, expected):
+            if variant.get("video_resolution", {}).get(motion) != "1080p":
+                errors.append(f"{color}-{motion}: ledger resolution is not 1080p")
             path = ROOT / relative
             if not path.is_file():
                 errors.append(f"missing {relative}")
@@ -41,7 +45,7 @@ def main() -> int:
                 data = probe(path)
                 stream = data["streams"][0]
                 dimensions = (stream["width"], stream["height"])
-                if dimensions not in ((1280, 720), (1920, 1080)):
+                if dimensions != (1920, 1080):
                     errors.append(f"{relative}: unexpected size {dimensions}")
                 if stream.get("tags", {}).get("alpha_mode") != "1":
                     errors.append(f"{relative}: VP9 alpha tag missing")
