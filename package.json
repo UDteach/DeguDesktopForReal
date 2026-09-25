@@ -1,6 +1,6 @@
 {
   "name": "degu-desktop-for-real",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "private": true,
   "author": "UDteach",
   "description": "A little degu that occasionally appears over your desktop",
@@ -28,7 +28,10 @@
     "mac": {
       "category": "public.app-category.entertainment",
       "icon": "assets/icons/app.icns",
-      "identity": null,
+      "identity": "-",
+      "hardenedRuntime": true,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.inherit.plist",
       "minimumSystemVersion": "12.0",
       "target": [{ "target": "dmg", "arch": ["arm64", "x64"] }, { "target": "zip", "arch": ["arm64", "x64"] }]
     },

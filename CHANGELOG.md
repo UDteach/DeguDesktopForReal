@@ -1,5 +1,17 @@
 # 更新履歴 / Changelog
 
+## v0.6.2 — 2026-09-25
+
+### 日本語
+
+- Mac版のアプリ全体をアドホック署名し、配布後に「壊れている」と判定される原因となっていた署名の不整合を修正しました。AppleのDeveloper ID署名・公証は行っていないため、初回起動時はmacOSの「プライバシーとセキュリティ」から「このまま開く」を選んでください。
+- ダウンロードページに初回起動の手順を追加しました。Windows版と全48本の1080p動画はv0.6.1と同じです。
+
+### English
+
+- Applied a consistent ad-hoc signature to the entire Mac app bundle, fixing the invalid signature that could make the downloaded app appear damaged. The app does not have an Apple Developer ID signature or notarization; on first launch, approve it with Open Anyway in macOS Privacy & Security.
+- Added first-launch instructions to the download pages. The Windows build and all 48 1080p clips are unchanged from v0.6.1.
+
 ## v0.6.1 — 2026-09-25
 
 ### 日本語
