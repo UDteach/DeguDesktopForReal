@@ -2,7 +2,7 @@
 
 壁紙を変えず、リアルなデグーがときどきデスクトップに現れるアプリです。透明なクリック透過ウィンドウで3種類の短い動きを再生します。Mac と Windows に対応します。Mac 版は Intel・Apple Silicon の両方を用意し、macOS 12 Monterey 以降で動作します。
 
-**[紹介ページ](https://udteach.github.io/DeguDesktopForReal/)** · **[English site](https://udteach.github.io/DeguDesktopForReal/index-en.html)** · **[Mac / Windows ダウンロード](https://udteach.github.io/DeguDesktopForReal/download.html)** · **[更新履歴](CHANGELOG.md)**
+**[紹介ページ](https://udteach.github.io/DeguDesktopForReal/)** · **[English site](https://udteach.github.io/DeguDesktopForReal/index-en.html)** · **[Mac / Windows ダウンロード](https://udteach.github.io/DeguDesktopForReal/download.html)** · **[Mac 初回起動の手順](https://udteach.github.io/DeguDesktopForReal/download.html#mac-first-open)** · **[更新履歴](CHANGELOG.md)**
 
 Mac のダウンロードでは、Intel 搭載機は Intel 用 DMG、M1 以降の Apple Silicon 搭載機は Apple Silicon 用 DMG を選んでください。対応 OS は macOS 12 Monterey 以降です。
 
@@ -43,6 +43,6 @@ npm start
 
 ## 配布について
 
-Mac版はアプリ内部の整合性のためにアドホック署名していますが、Apple Developer ID署名・公証は行っていません。初回起動がブロックされた場合は、起動を一度試した後に「システム設定」→「プライバシーとセキュリティ」→「このまま開く」を選んでください。Windows版もコード署名は行っていないため、SmartScreenの案内を確認してください。
+Mac版はアプリ内部の整合性のためにアドホック署名していますが、Apple Developer ID署名・公証は行っていません。初回起動時に「マルウェアが含まれていないことを検証できません」と表示されたら、[Mac 初回起動の手順](https://udteach.github.io/DeguDesktopForReal/download.html#mac-first-open)をご覧ください。Windows版もコード署名は行っていないため、SmartScreenの案内を確認してください。
 
 アプリはローカルで動作し、壁紙・他のアプリ・デスクトップのファイルを変更しません。

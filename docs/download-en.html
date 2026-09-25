@@ -28,7 +28,7 @@
 
     <aside class="mac-fix-notice" aria-label="Mac release update">
       <strong>Mac fix available in v0.6.2</strong>
-      <p>If v0.6.1 said the app was damaged, download the Mac version below and replace the older app.</p>
+      <p>If v0.6.1 said the app was damaged, replace it with the Mac version below. If you see “Apple cannot check it for malicious software” on first launch, follow the <a href="#mac-first-open">Mac opening steps</a>.</p>
     </aside>
 
     <section class="platforms" aria-label="Choose an installer">
@@ -38,6 +38,7 @@
         <p>For Macs with an Intel processor.<br>macOS 12 Monterey or later.</p>
         <a class="button primary platform-action" href="https://github.com/UDteach/DeguDesktopForReal/releases/latest/download/DeguDesktopForReal-mac-x64.dmg" aria-label="Download the Intel Mac DMG">Download for Intel Mac <span aria-hidden="true">↘</span></a>
         <a class="alternate-link" href="https://github.com/UDteach/DeguDesktopForReal/releases/latest/download/DeguDesktopForReal-mac-x64.zip">Download ZIP <span aria-hidden="true">↗</span></a>
+        <a class="first-launch-link" href="#mac-first-open">First launch blocked? See the steps →</a>
       </article>
       <article class="platform-card">
         <div class="platform-meta"><span class="platform-kicker">MAC · APPLE SILICON</span><span class="mac-version">Fixed in v0.6.2</span></div>
@@ -45,6 +46,7 @@
         <p>For Macs with an M1, M2, M3, or later Apple chip. macOS 12 Monterey or later.</p>
         <a class="button primary platform-action" href="https://github.com/UDteach/DeguDesktopForReal/releases/latest/download/DeguDesktopForReal-mac-arm64.dmg" aria-label="Download the Apple Silicon Mac DMG">Download for M-series Mac <span aria-hidden="true">↘</span></a>
         <a class="alternate-link" href="https://github.com/UDteach/DeguDesktopForReal/releases/latest/download/DeguDesktopForReal-mac-arm64.zip">Download ZIP <span aria-hidden="true">↗</span></a>
+        <a class="first-launch-link" href="#mac-first-open">First launch blocked? See the steps →</a>
       </article>
       <article class="platform-card">
         <span class="platform-kicker">WINDOWS · 64-BIT</span>
@@ -55,14 +57,30 @@
       </article>
     </section>
 
+    <section class="mac-first-open" id="mac-first-open" aria-labelledby="mac-first-open-title">
+      <span class="eyebrow">FIRST LAUNCH ON MAC</span>
+      <h2 id="mac-first-open-title">If Apple cannot check the app for malicious software</h2>
+      <p class="mac-first-open-intro">The Mac app has no Apple Developer ID signature or notarization, so macOS may show this warning the first time you open it. If you downloaded it from this page, you can allow this app with these steps.</p>
+      <ol class="mac-steps">
+        <li><strong>Install the app from the DMG</strong><p>Open the downloaded DMG and drag Degu Desktop for Real to Applications.</p></li>
+        <li><strong>Try opening the app once</strong><p>Open it from Applications. If the warning appears, close the alert.</p></li>
+        <li><strong>Choose Open Anyway in settings</strong><p><span class="mac-os">macOS 13 or later</span>Apple menu → System Settings → Privacy &amp; Security. Scroll down to Security, find the message that Degu Desktop for Real was blocked, and choose Open Anyway beside it.</p><p><span class="mac-os">macOS 12 Monterey</span>Apple menu → System Preferences → Security &amp; Privacy → General → Open Anyway.</p></li>
+        <li><strong>Confirm opening and authenticate</strong><p>In the next dialog, choose Open Anyway (or Open, depending on your macOS version). If prompted, enter your Mac administrator name and password, then choose OK.</p></li>
+      </ol>
+      <p class="mac-first-open-note"><strong>After launch, look in the menu bar.</strong> Use the paw icon at the top of the screen for Show now and settings. The app does not show an icon in the Dock.</p>
+      <p class="mac-first-open-note">If Open Anyway is missing, try opening the app again as in step 2, then return to settings.</p>
+      <p class="mac-first-open-note">“The app is damaged” is a different error. If you have v0.6.1, replace it with v0.6.2.</p>
+      <a class="mac-apple-link" href="https://support.apple.com/en-us/102445">Read Apple’s instructions <span aria-hidden="true">↗</span></a>
+    </section>
+
     <section class="download-help" aria-label="Download help">
       <div class="help-block">
         <h2>Not sure which Mac you have?</h2>
         <p>Open the Apple menu at the top left and choose About This Mac. Look for “Chip” or “Processor.” If you see Intel, choose Intel Mac. If you see M1 or another M-series chip, choose M1 or later Mac.</p>
       </div>
       <div class="help-block">
-        <h2>After downloading</h2>
-        <p>On Mac, open the latest DMG and move the app to Applications. Replace the older app if v0.6.1 said it was damaged. If first launch is blocked, try opening the app once, then go to System Settings → Privacy &amp; Security → Open Anyway. The Mac app has no Apple Developer ID signature or notarization. On Windows, run the EXE.</p>
+        <h2>Install on Windows</h2>
+        <p>Run the downloaded EXE. Choose the ZIP if you want to use it without an installer.</p>
       </div>
     </section>
     <p class="release-link">For release notes, earlier versions, and other formats, see <a href="https://github.com/UDteach/DeguDesktopForReal/releases/latest">GitHub Releases</a>.</p>
