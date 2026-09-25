@@ -3,9 +3,14 @@
 .download-intro h1{font-size:clamp(37px,4.1vw,62px);letter-spacing:-.065em;line-height:1.3;margin:20px 0}
 .download-intro p{max-width:690px;color:#5c6558;font-size:16px;line-height:1.9;margin:0}
 .download-intro img{width:180px;height:180px;object-fit:contain;object-position:center bottom;flex:none;filter:drop-shadow(0 12px 8px #3947351a)}
+.mac-fix-notice{margin-top:34px;padding:18px 22px;border:1px solid #bfd1b7;border-radius:16px;background:#e9f1e4;color:#344a39}
+.mac-fix-notice strong{display:block;font-size:16px}
+.mac-fix-notice p{margin:7px 0 0;font-size:13px;line-height:1.7}
 .platforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:42px}
 .platform-card{background:#fffefa;border:1px solid #dce3d4;border-radius:22px;padding:30px;min-width:0;display:flex;flex-direction:column;min-height:338px}
+.platform-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .platform-kicker{color:#71866b;font-size:11px;font-weight:700;letter-spacing:.12em}
+.mac-version{border-radius:999px;background:#e9f1e4;color:#466349;padding:6px 10px;font-size:11px;font-weight:700;white-space:nowrap}
 .platform-card h2{font-size:27px;letter-spacing:-.05em;margin:18px 0 12px}
 .platform-card p{font-size:14px;color:#657061;line-height:1.8;margin:0 0 30px;min-height:50px}
 .platform-action{width:100%;margin-top:auto;min-height:58px;padding:13px 16px;gap:10px;line-height:1.5;text-align:center}
@@ -19,5 +24,5 @@
 .release-link a{color:#344a39;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 a:focus-visible{outline:3px solid #315c9e;outline-offset:4px}
 @media(max-width:900px){.platforms{grid-template-columns:1fr}.platform-card{min-height:0}.platform-card p{min-height:0}.download-intro img{width:145px;height:145px}}
-@media(max-width:600px){.download-page{padding:46px 22px 70px}.download-intro{align-items:flex-start}.download-intro h1{font-size:36px;line-height:1.35}.download-intro p{font-size:14px}.download-intro img{display:none}.platforms{gap:14px;margin-top:33px}.platform-card{padding:25px}.platform-card h2{font-size:25px}.platform-card p{margin-bottom:24px}.download-help{grid-template-columns:1fr;gap:28px;margin-top:38px}.release-link{line-height:1.8}}
+@media(max-width:600px){.download-page{padding:46px 22px 70px}.download-intro{align-items:flex-start}.download-intro h1{font-size:36px;line-height:1.35}.download-intro p{font-size:14px}.download-intro img{display:none}.mac-fix-notice{margin-top:28px;padding:16px 18px}.platforms{gap:14px;margin-top:24px}.platform-card{padding:25px}.platform-card h2{font-size:25px}.platform-card p{margin-bottom:24px}.download-help{grid-template-columns:1fr;gap:28px;margin-top:38px}.release-link{line-height:1.8}}
 @media(max-width:360px){.download-intro h1{font-size:30px}.platform-action{font-size:12px;gap:6px}}
