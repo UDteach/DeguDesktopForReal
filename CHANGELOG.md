@@ -1,5 +1,23 @@
 # 更新履歴 / Changelog
 
+## v0.7.0 — 2026-09-26
+
+### 日本語
+
+- メニューバー／通知領域の「デグーの表示先」で、カーソルのあるモニタ、メインモニタ、特定のモニタ、すべてのモニタを選べるようになりました。すべてのモニタでは同じ毛色と動きが各画面に現れ、大発生モードにも対応します。
+- モニタの接続・取り外し、配置・解像度・表示倍率の変更に対応しました。選んだモニタが外れている間はメインモニタに表示し、再接続すると元の選択先に戻ります。
+- Mac でオーバーレイがメニューバーの高さだけ下へずれる問題を修正し、画面下端に正しく表示するようにしました。
+- 表示サイズを全体と毛色ごとに設定できるようになりました。「個別設定を消して全体に統一」で基本サイズに戻せます。従来のサイズと出現間隔は引き継ぎます。
+- ポモドーロの残り時間はメインモニタの右上に表示します。Mac の初回起動手順は引き続き [こちら](https://udteach.github.io/DeguDesktopForReal/download.html#mac-first-open) をご覧ください。
+
+### English
+
+- Added Degu display to the menu bar / system tray menu. Choose the monitor with the cursor, the primary monitor, a specific monitor, or all monitors. All monitors show the same coats and motions, including in swarm mode.
+- Added support for monitor connections, disconnections, and changes to layout, resolution, and scaling. A disconnected selection falls back to the primary monitor and resumes on the selected monitor when reconnected.
+- Fixed the Mac overlay being shifted down by the menu bar height, so bottom appearances align with the screen edge.
+- Added size settings for individual coats alongside the default size. Clear overrides and use one size restores the default for every coat. Existing size and interval preferences are preserved.
+- The Pomodoro countdown remains at the top right of the primary monitor. [Mac first-launch instructions](https://udteach.github.io/DeguDesktopForReal/download-en.html#mac-first-open) remain available.
+
 ## v0.6.2 — 2026-09-25
 
 ### 日本語

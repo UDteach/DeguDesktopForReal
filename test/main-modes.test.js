@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const vm = require('node:vm');
+const { EventEmitter } = require('node:events');
 
 test('tray switches Pomodoro, countdown visibility, and swarm playback', () => {
   const root = path.join(__dirname, '..');
@@ -18,12 +19,11 @@ test('tray switches Pomodoro, countdown visibility, and swarm playback', () => {
       this.events = new Map();
       this.sent = [];
       this.hideCount = 0;
-      this.contentEvents = new Map();
-      this.webContents = {
+      this.webContents = Object.assign(new EventEmitter(), {
+        id: windows.length + 1,
         isLoading: () => false,
         send: (channel, payload) => this.sent.push({ channel, payload }),
-        once: (event, callback) => this.contentEvents.set(event, callback),
-      };
+      });
       windows.push(this);
     }
     loadFile() {}
@@ -59,14 +59,17 @@ test('tray switches Pomodoro, countdown visibility, and swarm playback', () => {
     nativeImage: { createFromPath: () => ({}) },
     screen: {
       getCursorScreenPoint: () => ({ x: 1, y: 1 }),
-      getDisplayNearestPoint: () => ({ bounds: { x: 0, y: 0, width: 1440, height: 900 } }),
-      getPrimaryDisplay: () => ({ workArea: { x: 0, y: 24, width: 1440, height: 876 } }),
+      getDisplayNearestPoint: () => ({ id: 1, bounds: { x: 0, y: 0, width: 1440, height: 900 } }),
+      getPrimaryDisplay: () => ({ id: 1, workArea: { x: 0, y: 24, width: 1440, height: 876 } }),
+      getAllDisplays: () => [{ id: 1, bounds: { x: 0, y: 0, width: 1440, height: 900 } }],
+      on() {},
     },
     ipcMain: { handle: (key, callback) => handlers.set(key, callback), on() {} },
   };
   const context = {
     require: (name) => name === 'electron' ? electron :
-      name === './modes' ? require('../electron/modes') : require(name),
+      name === './modes' ? require('../electron/modes') :
+      name === './appearance' ? require('../electron/appearance') : require(name),
     __dirname: path.join(root, 'electron'), process: { platform: 'darwin', resourcesPath: '' },
     setTimeout: () => 1, clearTimeout() {}, setInterval: () => 1, clearInterval() {},
     setImmediate: (callback) => callback(), structuredClone, console,
@@ -82,7 +85,7 @@ test('tray switches Pomodoro, countdown visibility, and swarm playback', () => {
 
   item('ポモドーロ').submenu[1].click();
   const timer = windows.find((window) => window.options.width === 190);
-  timer.contentEvents.get('did-finish-load')();
+  timer.webContents.emit('did-finish-load');
   assert.equal(saved().modes.showTimer, true);
   assert.equal(timer.sent.at(-1).channel, 'timer:update');
   assert.match(timer.sent.at(-1).payload.time, /^\d+:\d{2}$/);
@@ -93,6 +96,7 @@ test('tray switches Pomodoro, countdown visibility, and swarm playback', () => {
   item('ポモドーロ').submenu[0].click();
   assert.equal(saved().modes.pomodoro.enabled, false);
   const overlay = windows.find((window) => window.options.frame === false && window !== timer);
+  overlay.webContents.emit('did-finish-load');
   assert.equal(overlay.sent.at(-1).channel, 'play');
   assert.equal(overlay.sent.at(-1).payload.clips.length, 1);
 

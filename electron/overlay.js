@@ -13,11 +13,11 @@ function clearClips() {
 }
 
 window.degu.onStop(clearClips);
-window.degu.onPlay(({ clips: items }) => {
+window.degu.onPlay(({ clips: items, playbackId }) => {
   clearClips();
   const current = generation;
   let remaining = items.length;
-  if (remaining === 0) { window.degu.ended(); return; }
+  if (remaining === 0) { window.degu.ended(playbackId); return; }
   for (const item of items) {
     const clip = document.createElement('video');
     let completed = false;
@@ -25,7 +25,7 @@ window.degu.onPlay(({ clips: items }) => {
       if (current !== generation || completed) return;
       completed = true;
       remaining -= 1;
-      if (remaining === 0) window.degu.ended();
+      if (remaining === 0) window.degu.ended(playbackId);
     };
     clip.muted = true;
     clip.playsInline = true;

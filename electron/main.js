@@ -2,6 +2,7 @@ const { app, BrowserWindow, Menu, Tray, nativeImage, screen, ipcMain } = require
 const path = require('node:path');
 const fs = require('node:fs');
 const { defaultModes, validModes, pomodoroPhase } = require('./modes');
+const { validSizeIndex, sizeIndexFor, validDisplayTarget, displaysForTarget } = require('./appearance');
 
 const motions = [
   { id: 'a-bottom-pop', anchor: 'center' },
@@ -29,6 +30,11 @@ const copy = {
     allColors: '全色ランダム', oneColor: '1色だけ表示',
     selectedColors: '選択した毛色からランダム（複数可）',
     interval: '出現間隔', custom: 'カスタム間隔…', size: '表示サイズ',
+    baseSize: '全体の基本サイズ', colorSize: '毛色ごと', inheritSize: '全体の基本サイズを使う',
+    clearSizes: '個別設定を消して全体に統一',
+    monitor: 'デグーの表示先', monitorCursor: 'カーソルのあるモニタ', monitorPrimary: 'メインモニタ',
+    monitorAll: 'すべてのモニタ', monitorName: 'モニタ', monitorMain: 'メイン',
+    monitorMissing: '選択中のモニタは未接続（メインに表示）',
     pomodoro: 'ポモドーロ', showTimer: '残り時間を画面に表示', chaos: 'デグー大発生モード',
     enabled: 'オン', configureModes: 'モードの設定…',
     focus: '集中', break: '休憩', longBreak: '長い休憩', minutesLeft: '残り{n}分',
@@ -39,6 +45,11 @@ const copy = {
     allColors: 'Random from all colors', oneColor: 'One color only',
     selectedColors: 'Random from selected colors (multiple)',
     interval: 'Appearance interval', custom: 'Custom interval…', size: 'Display size',
+    baseSize: 'Default size for all', colorSize: 'By coat color', inheritSize: 'Use default size',
+    clearSizes: 'Clear overrides and use one size',
+    monitor: 'Degu display', monitorCursor: 'Monitor with cursor', monitorPrimary: 'Primary monitor',
+    monitorAll: 'All monitors', monitorName: 'Monitor', monitorMain: 'Primary',
+    monitorMissing: 'Selected monitor disconnected (using primary)',
     pomodoro: 'Pomodoro', showTimer: 'Show remaining time on screen', chaos: 'Degu swarm mode',
     enabled: 'On', configureModes: 'Mode settings…',
     focus: 'Focus', break: 'Break', longBreak: 'Long break', minutesLeft: '{n} min left',
@@ -65,7 +76,9 @@ const colorNames = {
 };
 
 let tray;
-let overlay;
+const overlays = new Map();
+const readyOverlays = new Set();
+const pendingOverlays = new Set();
 let timerWindow;
 let intervalWindow;
 let modesWindow;
@@ -80,6 +93,7 @@ let lastColor;
 let paused = false;
 let settings = {
   frequency: 1, customInterval: { min: 60, max: 180 }, size: 1,
+  sizeByColor: {}, displayTarget: 'cursor',
   language: 'ja', allColors: true, colors: [], modes: structuredClone(defaultModes),
 };
 let availableColors = [];
@@ -110,7 +124,13 @@ function loadSettings() {
     if (Number.isInteger(saved.frequency) && frequencies[saved.frequency]) settings.frequency = saved.frequency;
     if (validInterval(saved.customInterval)) settings.customInterval = saved.customInterval;
     if (saved.frequency === 'custom' && validInterval(saved.customInterval)) settings.frequency = 'custom';
-    if (Number.isInteger(saved.size) && sizes[saved.size]) settings.size = saved.size;
+    if (validSizeIndex(saved.size)) settings.size = saved.size;
+    if (saved.sizeByColor && typeof saved.sizeByColor === 'object' && !Array.isArray(saved.sizeByColor)) {
+      for (const id of Object.keys(colorNames)) {
+        if (validSizeIndex(saved.sizeByColor[id])) settings.sizeByColor[id] = saved.sizeByColor[id];
+      }
+    }
+    if (validDisplayTarget(saved.displayTarget)) settings.displayTarget = saved.displayTarget;
     if (saved.language === 'ja' || saved.language === 'en') settings.language = saved.language;
     if (validModes(saved.modes)) settings.modes = saved.modes;
     if (settings.modes.pomodoro.enabled && !settings.modes.pomodoro.startedAt) {
@@ -165,6 +185,53 @@ function selectOnlyColor(id) {
   settings.allColors = false;
   settings.colors = [id];
   saveSettings();
+  refreshMenu();
+}
+
+function sizeOptions(language, color) {
+  const current = settings.sizeByColor[color];
+  const choose = (index) => {
+    if (validSizeIndex(index)) settings.sizeByColor[color] = index;
+    else delete settings.sizeByColor[color];
+    saveSettings();
+    refreshMenu();
+  };
+  return [
+    { label: copy[language].inheritSize, type: 'radio', checked: !validSizeIndex(current),
+      click: () => choose(undefined) },
+    ...sizes.map((item, index) => ({
+      label: item.label[language], type: 'radio', checked: current === index, click: () => choose(index),
+    })),
+  ];
+}
+
+function monitorMenu(language) {
+  const t = copy[language];
+  const displays = screen.getAllDisplays();
+  const primaryId = screen.getPrimaryDisplay().id;
+  const target = settings.displayTarget;
+  const options = [
+    { label: t.monitorCursor, type: 'radio', checked: target === 'cursor', click: () => setDisplayTarget('cursor') },
+    { label: t.monitorPrimary, type: 'radio', checked: target === 'primary', click: () => setDisplayTarget('primary') },
+    { label: t.monitorAll, type: 'radio', checked: target === 'all', click: () => setDisplayTarget('all') },
+    { type: 'separator' },
+    ...displays.map((display, index) => ({
+      label: `${index + 1}. ${display.label || `${t.monitorName} ${index + 1}`}${display.id === primaryId ? ` (${t.monitorMain})` : ''}`,
+      type: 'radio', checked: target === `display:${display.id}`,
+      click: () => setDisplayTarget(`display:${display.id}`),
+    })),
+  ];
+  if (target.startsWith('display:') && !displays.some((display) => target === `display:${display.id}`)) {
+    options.push({ label: t.monitorMissing, type: 'radio', checked: true, enabled: false });
+  }
+  return options;
+}
+
+function setDisplayTarget(target) {
+  settings.displayTarget = target;
+  saveSettings();
+  stop();
+  schedule();
   refreshMenu();
 }
 
@@ -233,10 +300,19 @@ function menu() {
       { label: t.custom, type: 'radio', checked: settings.frequency === 'custom',
         click: () => { openIntervalWindow(); refreshMenu(); } },
     ] },
-    { label: t.size, submenu: sizes.map((item, index) => ({
-      label: item.label[language], type: 'radio', checked: settings.size === index,
-      click: () => { settings.size = index; saveSettings(); refreshMenu(); },
-    })) },
+    { label: t.size, submenu: [
+      { label: t.baseSize, submenu: sizes.map((item, index) => ({
+        label: item.label[language], type: 'radio', checked: settings.size === index,
+        click: () => { settings.size = index; saveSettings(); refreshMenu(); },
+      })) },
+      { label: t.colorSize, submenu: availableColors.map((id) => ({
+        label: colorNames[id]?.[language] || id, submenu: sizeOptions(language, id),
+      })) },
+      { type: 'separator' },
+      { label: t.clearSizes, enabled: Object.keys(settings.sizeByColor).length > 0,
+        click: () => { settings.sizeByColor = {}; saveSettings(); refreshMenu(); } },
+    ] },
+    { label: t.monitor, submenu: monitorMenu(language) },
     { type: 'separator' },
     { label: t.pomodoro, submenu: [
       { label: t.enabled, type: 'checkbox', checked: settings.modes.pomodoro.enabled, click: togglePomodoro },
@@ -348,9 +424,12 @@ function stop() {
   clearTimeout(stopTimer);
   nextTimer = undefined;
   stopTimer = undefined;
-  if (overlay && !overlay.isDestroyed()) {
-    overlay.webContents.send('stop');
-    overlay.hide();
+  pendingOverlays.clear();
+  for (const window of overlays.values()) {
+    if (!window.isDestroyed()) {
+      window.webContents.send('stop');
+      window.hide();
+    }
   }
 }
 
@@ -425,26 +504,49 @@ function schedule() {
   nextTimer = setTimeout(playNext, seconds * 1000);
 }
 
-function ensureOverlay() {
-  if (overlay && !overlay.isDestroyed()) return overlay;
-  overlay = new BrowserWindow({
+function ensureOverlay(display) {
+  const existing = overlays.get(display.id);
+  if (existing && !existing.isDestroyed()) return existing;
+  const window = new BrowserWindow({
     show: false, frame: false, transparent: true, backgroundColor: '#00000000',
     skipTaskbar: true, focusable: false, hasShadow: false, resizable: false,
+    // Keep macOS from moving the full-screen overlay below the menu bar.
+    enableLargerThanScreen: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true, nodeIntegration: false, sandbox: true,
       backgroundThrottling: false,
     },
   });
-  overlay.setIgnoreMouseEvents(true, { forward: true });
-  overlay.setAlwaysOnTop(true, 'screen-saver');
+  overlays.set(display.id, window);
+  window.setIgnoreMouseEvents(true, { forward: true });
+  window.setAlwaysOnTop(true, 'screen-saver');
   if (process.platform === 'darwin') {
-    overlay.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
-    overlay.setFullScreenable(false);
+    window.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
+    window.setFullScreenable(false);
   }
-  overlay.loadFile(path.join(__dirname, 'overlay.html'));
-  overlay.on('closed', () => { overlay = undefined; });
-  return overlay;
+  const contentsId = window.webContents.id;
+  window.webContents.once('did-finish-load', () => readyOverlays.add(contentsId));
+  window.loadFile(path.join(__dirname, 'overlay.html'));
+  window.on('closed', () => {
+    if (overlays.get(display.id) === window) overlays.delete(display.id);
+    readyOverlays.delete(contentsId);
+    if (pendingOverlays.delete(contentsId) && pendingOverlays.size === 0) {
+      stop();
+      schedule();
+    }
+  });
+  return window;
+}
+
+function selectedDisplays() {
+  const primaryId = screen.getPrimaryDisplay().id;
+  let cursorId = primaryId;
+  if (settings.displayTarget === 'cursor') {
+    try { cursorId = screen.getDisplayNearestPoint(screen.getCursorScreenPoint()).id; }
+    catch { /* Fall back to the primary display if the cursor cannot be read. */ }
+  }
+  return displaysForTarget(settings.displayTarget, screen.getAllDisplays(), primaryId, cursorId);
 }
 
 function playNext(manual = false) {
@@ -458,16 +560,13 @@ function playNext(manual = false) {
   const epoch = playbackEpoch;
   const colors = selectedColors();
   const usedColors = new Set();
-  const scale = settings.modes.chaos
-    ? Math.min(0.48, Math.max(0.34, sizes[settings.size].scale * 0.72))
-    : sizes[settings.size].scale;
   const placements = settings.modes.chaos
     ? [
-      { motion: motions[0], left: 0, bottom: 0 },
-      { motion: motions[0], left: 1 - scale, bottom: 0 },
-      { motion: motions[1], left: 0, bottom: 0.47, flip: true },
-      { motion: motions[1], left: 1 - scale, bottom: 0.47 },
-      { motion: motions[2], left: (1 - scale) / 2, bottom: 0.22 },
+      { motion: motions[0], anchor: 'left', bottom: 0 },
+      { motion: motions[0], anchor: 'right', bottom: 0 },
+      { motion: motions[1], anchor: 'left', bottom: 0.47, flip: true },
+      { motion: motions[1], anchor: 'right', bottom: 0.47 },
+      { motion: motions[2], anchor: 'center', bottom: 0.22 },
     ]
     : [{ bottom: 0 }];
   const clips = placements.map((position) => {
@@ -480,32 +579,61 @@ function playNext(manual = false) {
     const color = choices[Math.floor(Math.random() * choices.length)];
     usedColors.add(color);
     lastColor = color;
+    const baseScale = sizes[sizeIndexFor(settings, color)].scale;
+    const scale = settings.modes.chaos ? Math.min(0.48, Math.max(0.34, baseScale * 0.72)) : baseScale;
     const file = path.join(videoDir(), `${color}-${motion.id}.webm`);
-    const left = settings.modes.chaos ? position.left :
-      motion.anchor === 'center' ? (1 - scale) / 2 : motion.anchor === 'right' ? 1 - scale : 0;
+    const anchor = position.anchor || motion.anchor;
+    const left = anchor === 'center' ? (1 - scale) / 2 : anchor === 'right' ? 1 - scale : 0;
     return { url: require('node:url').pathToFileURL(file).href,
       left, bottom: position.bottom, scale, flip: Boolean(position.flip) };
   });
-  const display = screen.getDisplayNearestPoint(screen.getCursorScreenPoint());
-  const { x, y, width, height } = display.bounds;
-  const window = ensureOverlay();
-  window.setBounds({ x, y, width, height });
+  const displays = selectedDisplays();
+  if (!displays.length) { schedule(); return; }
+  const windows = displays.map((display) => {
+    const window = ensureOverlay(display);
+    window.setBounds(display.bounds);
+    pendingOverlays.add(window.webContents.id);
+    return window;
+  });
+  let started = false;
+  const finish = () => { if (epoch === playbackEpoch) { stop(); schedule(); } };
   const send = () => {
-    if (epoch !== playbackEpoch || window.isDestroyed()) return;
-    window.webContents.send('play', { clips });
-    window.showInactive();
+    if (started || epoch !== playbackEpoch || windows.some((window) => window.isDestroyed())) return;
+    if (!windows.every((window) => readyOverlays.has(window.webContents.id))) return;
+    started = true;
+    for (const window of windows) {
+      window.webContents.send('play', { clips, playbackId: epoch });
+      window.showInactive();
+    }
     // Never leave an invisible full-screen overlay alive after decoder failure.
-    stopTimer = setTimeout(() => { stop(); schedule(); }, 8500);
+    clearTimeout(stopTimer);
+    stopTimer = setTimeout(finish, 8500);
   };
-  if (window.webContents.isLoading()) window.webContents.once('did-finish-load', send);
-  else send();
+  stopTimer = setTimeout(finish, 8500);
+  for (const window of windows) {
+    if (!readyOverlays.has(window.webContents.id)) window.webContents.once('did-finish-load', send);
+  }
+  send();
 }
 
-ipcMain.on('clip-ended', (event) => {
-  if (event.sender !== overlay?.webContents) return;
-  stop();
-  schedule();
+ipcMain.on('clip-ended', (event, playbackId) => {
+  if (playbackId !== playbackEpoch || !pendingOverlays.delete(event.sender.id)) return;
+  if (pendingOverlays.size === 0) { stop(); schedule(); }
 });
+
+function handleDisplayChange() {
+  stop();
+  const displays = screen.getAllDisplays();
+  for (const [id, window] of overlays) {
+    if (window.isDestroyed()) continue;
+    const display = displays.find((item) => item.id === id);
+    if (display) window.setBounds(display.bounds);
+    else window.destroy();
+  }
+  syncTimerWindow();
+  refreshMenu();
+  schedule();
+}
 
 app.whenReady().then(() => {
   if (process.platform === 'darwin') app.dock.hide();
@@ -516,6 +644,9 @@ app.whenReady().then(() => {
   tray = new Tray(trayIcon);
   tray.setToolTip('Degu Desktop for Real');
   refreshMenu();
+  screen.on('display-added', handleDisplayChange);
+  screen.on('display-removed', handleDisplayChange);
+  screen.on('display-metrics-changed', handleDisplayChange);
   lastAllowed = canAutoPlay();
   syncTimerWindow();
   runtimeTicker = setInterval(reconcileRuntime, 1000);
