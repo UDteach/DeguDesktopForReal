@@ -201,3 +201,13 @@ In v0.5.1, the swarm slots follow each clip's entry direction. The left side-pee
 | AnimalsDesktop public page | UDteach | User's own reference | Download hierarchy and compatibility explanation |
 | [WebKit VP9 alpha bug](https://bugs.webkit.org/show_bug.cgi?id=275908) | WebKit Bugzilla | Public technical issue | Browser fallback decision |
 | [Safari 14 WebP support](https://webkit.org/blog/11340/new-webkit-features-in-safari-14/) | WebKit | Public technical documentation | Transparent animated WebP compatibility |
+
+## OBS browser source, 2026-09-27
+
+- Primary job: Select the degu coats and motions, preview their size and position, then paste one URL into an OBS Browser Source.
+- Reference: The user's [Animals Desktop OBS implementation](https://udteach.github.io/AnimalsDesktopForReal/obs/) supplies the editor and URL flow. The Degu site supplies the cream and green palette, coat images, and the three existing transparent motions.
+- Target: A two-column editor at desktop width, with coat controls on the left and a pinned preview on the right. At 320 px, preview comes first; all controls and the generated URL remain accessible without horizontal scrolling.
+- Alternatives considered: A fixed URL would be faster to build but cannot choose coats or motions. A desktop-app bridge would require the app to run during a stream. The selected static page keeps settings in the URL and plays inside OBS independently.
+- Visible controls: Coat and motion selection, order, interval, size, side, display area, opacity, video/image mode, named presets, URL import, and URL copy. The output page contains only the transparent stage.
+- Visual constraints: Reuse `docs/style.css` color roles and the actual coat images. Show the practical next step before a long explanation. Keep the preview background and area outline out of the OBS page.
+- Verification: [Desktop 1280 px](evidence/after/obs-desktop-1280.png) and [mobile 320 px](evidence/after/obs-mobile-320.png). The 320 px page has no horizontal overflow. Playback, fallback, URL validation, and transparency checks are recorded in `qa/obs-web/results.md` at the repository root.

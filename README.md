@@ -2,7 +2,7 @@
 
 壁紙を変えず、リアルなデグーがときどきデスクトップに現れるアプリです。透明なクリック透過ウィンドウで3種類の短い動きを再生します。Mac と Windows に対応します。Mac 版は Intel・Apple Silicon の両方を用意し、macOS 12 Monterey 以降で動作します。
 
-**[紹介ページ](https://udteach.github.io/DeguDesktopForReal/)** · **[English site](https://udteach.github.io/DeguDesktopForReal/index-en.html)** · **[Mac / Windows ダウンロード](https://udteach.github.io/DeguDesktopForReal/download.html)** · **[Mac 初回起動の手順](https://udteach.github.io/DeguDesktopForReal/download.html#mac-first-open)** · **[更新履歴](CHANGELOG.md)**
+**[紹介ページ](https://udteach.github.io/DeguDesktopForReal/)** · **[OBSで使う](https://udteach.github.io/DeguDesktopForReal/obs/)** · **[English site](https://udteach.github.io/DeguDesktopForReal/index-en.html)** · **[Mac / Windows ダウンロード](https://udteach.github.io/DeguDesktopForReal/download.html)** · **[Mac 初回起動の手順](https://udteach.github.io/DeguDesktopForReal/download.html#mac-first-open)** · **[更新履歴](CHANGELOG.md)**
 
 Mac のダウンロードでは、Intel 搭載機は Intel 用 DMG、M1 以降の Apple Silicon 搭載機は Apple Silicon 用 DMG を選んでください。対応 OS は macOS 12 Monterey 以降です。
 
@@ -18,6 +18,8 @@ Mac のダウンロードでは、Intel 搭載機は Intel 用 DMG、M1 以降�
 [すべての更新履歴](CHANGELOG.md) · [配布版の履歴](https://github.com/UDteach/DeguDesktopForReal/releases)
 
 ## 使い方
+
+OBSでは[設定ページ](https://udteach.github.io/DeguDesktopForReal/obs/)で毛色・動き・間隔・サイズ・表示エリアを選び、生成されたURLを「ブラウザ」ソースに貼り付けます。ブラウザソースの幅と高さは配信キャンバスに合わせてください。設定ページを閉じてもOBS内の表示は続きます。変更後は新しいURLに貼り替えます。
 
 通常モードではアプリを起動すると1回デグーが現れ、その後は選んだ間隔で現れます。ポモドーロの集中中は自動表示を休みます。メニューバー（Mac）または通知領域（Windows）の肉球アイコンから「今すぐ表示」「一時停止」「毛色」「出現間隔」「表示サイズ」「デグーの表示先」「ポモドーロ」「デグー大発生モード」「モードの設定」「言語」「終了」を選べます。出現間隔は「1〜30秒」「1〜3分」「3〜6分」「5〜10分」「10〜20分」のランダム範囲、またはカスタムで固定値・任意のランダム範囲を設定できます。言語は日本語と英語に対応します。毛色メニューでは「1色だけ表示」、複数選択した毛色からランダムに表示、「全色ランダム」を選べます。
 
@@ -47,6 +49,8 @@ npm start
 配布物は GitHub Actions がタグ `v*` のプッシュで Mac（Apple Silicon / Intel）と Windows（x64）をビルドし、GitHub Releases に追加します。サイトは `docs/` を GitHub Pages に公開します。リリースファイル名はバージョンによらず固定し、専用ページから最新版を直接ダウンロードできるようにします。
 
 動画素材は `assets/videos/{毛色}-{動作}.webm` に置きます。動作名は `a-bottom-pop`、`b-side-peek`、`c-center-hop`。VP9 のアルファ付き WebM を使います。Flow で生成した緑背景の MP4 を保存したら、`python3 scripts/process_clip.py 入力.mp4 assets/videos/毛色-動作.webm --keep-source` で透過動画にできます。配布前に `python3 scripts/audit_videos.py` で全48本を検査します。詳しくは [制作メモ](concept/README.md) と [クロマキー処理](scripts/key_chroma.py) を参照してください。
+
+OBS用の公開素材は `python3 scripts/build-obs-assets.py` で720pの透過WebMに変換し、`npm run check:obs` で設定ページとカタログを生成・検証します。生成先の `docs/obs/` と `docs/assets/obs-videos/` をGitHub Pagesで配信します。
 
 ## 配布について
 
