@@ -11,6 +11,12 @@
 - A named preset saved and loaded; importing the generated URL restored its settings. English labels switched with the language selector.
 - Desktop 1280 px and mobile 320 px screenshots reviewed. The mobile document width equals the viewport width.
 
+## Published site
+
+- GitHub Pages workflow [run 36290560305](https://github.com/UDteach/DeguDesktopForReal/actions/runs/36290560305) succeeded for commit `e46c753`.
+- Public settings page, overlay page, sample WebM, and coat PNG each returned HTTP 200.
+- The public settings page loaded 16 coats and 48 motion choices without browser console errors. Its generated URL played a WebM in the output page; the page had no visible text or opaque background. A browser screenshot of the public overlay had alpha values from 0 to 255.
+
 ## OBS checks to perform on Mac and Windows
 
 - Add the generated URL as a Browser Source at 1920 × 1080 and confirm the video remains transparent over a scene.
