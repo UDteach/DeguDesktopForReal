@@ -25,3 +25,9 @@
 - MP4全48本をffprobeとデコードした代表フレームで検査。透明部分538,253サンプルで黒化0、4毛色のフレームを目視確認。詳細は [mp4-assets.json](mp4-assets.json)。
 
 `xcrun simctl list devices available` は端末なし。この確認はmacOSのPlaywright WebKitによるiPhone設定であり、iPhone実機・iOS Simulator・OBS Studio実機の確認ではない。
+
+## 公開後
+
+- GitHub Pages [run 36304900074](https://github.com/UDteach/DeguDesktopForReal/actions/runs/36304900074) がコミット `852f425e5c5f7fd670bb79f70c42dd7356c6bb2d` で成功。
+- [公開URL](https://udteach.github.io/DeguDesktopForReal/try/)でWebKit iPhoneモードのMP4再生、停止・毛色変更・再開、拡大と退出、MP4 404時のPNGと背景復元、回復後のMP4、英語の案内を確認。ChromiumでもWebM→MP4→PNG、復旧、全画面、OBSのPNGフォールバックを確認。ページエラー0件、OBSでのMP4リクエスト0件。
+- 配信されたHTML/CSS/モジュール8ファイルがローカルとバイト一致。MP4全48本のHTTP 200、Content-Lengthの一致、Content-Type `video/mp4` を確認。
