@@ -24,3 +24,10 @@ macOS / Node.js 24 / Playwright Chromium、ローカル `http://127.0.0.1:4175/`
 コピー確認: 日本語主体、既存の丁寧な距離感、1文1動作、主導線は「Webでおためし」、内部用語や品質の自称を表示しない。英語も同じ操作順。ブラウザ内表示とアプリでのデスクトップ表示の違いを案内する。
 
 未実施: Safari / iOS / Android / Windows実機、OBS Studio実機、長時間連続再生。スマホ幅はChromiumのビューポートで確認した。
+
+## 公開後の確認
+
+- GitHub Pages [run 36302988641](https://github.com/UDteach/DeguDesktopForReal/actions/runs/36302988641) がコミット `5df66692dc78b8f4152c36fc851c02401aaf4a52` で成功。
+- [公開おためしページ](https://udteach.github.io/DeguDesktopForReal/try/)で16毛色の選択、動画再生、全画面と解除、一時停止と再開、言語切り替えを確認。
+- 日本語・英語のトップ・ダウンロード4ページは320pxでも体験リンクが見え、対応言語のおためしへ遷移して動画が再生された。ページエラーとHTTP失敗はいずれも0件。
+- トップとダウンロードの日英HTML、2つの共有CSS、体験ページのHTML/CSS/JS、OBS runtimeの計10ファイルはHTTP 200で、公開内容がローカルファイルとバイト単位で一致した。
