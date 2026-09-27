@@ -4,7 +4,7 @@ function effectFor(motion) {
   return 'hop';
 }
 
-function hasTransparentFrame(video) {
+function inspectFrame(video, requireAlpha = true) {
   if (!video.videoWidth || !video.videoHeight) return false;
   const width = 160;
   const height = Math.max(1, Math.round(width * video.videoHeight / video.videoWidth));
@@ -15,18 +15,32 @@ function hasTransparentFrame(video) {
     const context = canvas.getContext('2d', { willReadFrequently: true });
     context.drawImage(video, 0, 0, width, height);
     const pixels = context.getImageData(0, 0, width, height).data;
+    if (!requireAlpha) return { backgroundColor: `rgb(${pixels[0]}, ${pixels[1]}, ${pixels[2]})` };
     for (let i = 3; i < pixels.length; i += 4) {
-      if (pixels[i] < 245) return true;
+      if (pixels[i] < 245) return { backgroundColor: null };
     }
-  } catch { return false; }
+  } catch { return requireAlpha ? false : { backgroundColor: null }; }
   return false;
 }
 
-export function createRenderer(stage, { onEnded = () => {}, onError = () => {} } = {}) {
+export function createRenderer(stage, {
+  onEnded = () => {}, onError = () => {}, onFormat = () => {}, allowOpaqueVideo = false,
+} = {}) {
   let generation = 0;
   let video = null;
   let loadingTimer = null;
   let watchdog = null;
+  let preferMp4 = false;
+
+  function releaseVideo() {
+    if (!video) return;
+    const media = video;
+    video = null;
+    media.pause();
+    media.removeAttribute('src');
+    media.load();
+    media.remove();
+  }
 
   function clear() {
     generation += 1;
@@ -34,12 +48,7 @@ export function createRenderer(stage, { onEnded = () => {}, onError = () => {} }
     clearTimeout(watchdog);
     loadingTimer = null;
     watchdog = null;
-    if (video) {
-      video.pause();
-      video.removeAttribute('src');
-      video.load();
-      video = null;
-    }
+    releaseVideo();
     stage.replaceChildren();
   }
 
@@ -48,6 +57,7 @@ export function createRenderer(stage, { onEnded = () => {}, onError = () => {} }
     const current = generation;
     let complete = false;
     let fallbackStarted = false;
+    let mp4Attempted = false;
     const finish = (result = 'finished') => {
       if (current !== generation || complete) return;
       complete = true;
@@ -90,20 +100,15 @@ export function createRenderer(stage, { onEnded = () => {}, onError = () => {} }
     clip.append(actor);
     stage.append(clip);
 
-    watchdog = setTimeout(() => finish('timeout'), 12000);
+    // Allow both video formats to load (up to five seconds each) before a four-second PNG.
+    watchdog = setTimeout(() => finish('timeout'), allowOpaqueVideo ? 18000 : 12000);
 
     function showImage(reason) {
       if (current !== generation || complete || fallbackStarted) return;
       fallbackStarted = true;
       clearTimeout(loadingTimer);
       loadingTimer = null;
-      if (video) {
-        video.pause();
-        video.removeAttribute('src');
-        video.load();
-        video.remove();
-        video = null;
-      }
+      releaseVideo();
       if (reason) onError(reason);
       const image = document.createElement('img');
       image.className = 'obs-media obs-image';
@@ -111,6 +116,7 @@ export function createRenderer(stage, { onEnded = () => {}, onError = () => {} }
       image.decoding = 'async';
       image.addEventListener('load', () => {
         if (current !== generation || complete) return;
+        onFormat({ format: 'png', error: reason });
         // A layout read restarts the animation after rapid source changes.
         void image.offsetWidth;
         image.classList.add('is-playing');
@@ -125,33 +131,47 @@ export function createRenderer(stage, { onEnded = () => {}, onError = () => {} }
       showImage();
       return;
     }
-    const media = document.createElement('video');
-    video = media;
-    media.className = 'obs-media obs-video';
-    media.muted = true;
-    media.defaultMuted = true;
-    media.playsInline = true;
-    media.preload = 'auto';
-    media.addEventListener('loadeddata', () => {
-      if (current !== generation || complete || video !== media) return;
-      if (!hasTransparentFrame(media)) {
-        showImage('video-alpha');
-        return;
-      }
-      Promise.resolve(media.play()).then(() => {
+    function playVideo(url, format) {
+      clearTimeout(loadingTimer);
+      releaseVideo();
+      const media = document.createElement('video');
+      video = media;
+      if (format === 'mp4') mp4Attempted = true;
+      media.className = 'obs-media obs-video';
+      media.dataset.format = format;
+      media.muted = true;
+      media.defaultMuted = true;
+      media.playsInline = true;
+      media.preload = 'auto';
+      function failed(reason) {
         if (current !== generation || complete || video !== media) return;
-        clearTimeout(loadingTimer);
-        loadingTimer = null;
-        void media.offsetWidth;
-        media.classList.add('is-playing');
-      }).catch(() => showImage('video-play'));
-    }, { once: true });
-    media.addEventListener('error', () => showImage('video-error'), { once: true });
-    media.addEventListener('ended', () => finish(), { once: true });
-    actor.append(media);
-    loadingTimer = setTimeout(() => showImage('video-timeout'), 5000);
-    media.src = new URL(motion.video, document.baseURI).href;
-    media.load();
+        if (allowOpaqueVideo && motion.fallbackVideo && !mp4Attempted) {
+          if (reason === 'video-alpha') preferMp4 = true;
+          playVideo(motion.fallbackVideo, 'mp4');
+        } else showImage(reason);
+      }
+      media.addEventListener('loadeddata', () => {
+        if (current !== generation || complete || video !== media) return;
+        const frame = inspectFrame(media, format === 'webm');
+        if (!frame) { failed('video-alpha'); return; }
+        Promise.resolve(media.play()).then(() => {
+          if (current !== generation || complete || video !== media) return;
+          clearTimeout(loadingTimer);
+          loadingTimer = null;
+          onFormat({ format, backgroundColor: frame.backgroundColor });
+          void media.offsetWidth;
+          media.classList.add('is-playing');
+        }).catch(() => failed('video-play'));
+      }, { once: true });
+      media.addEventListener('error', () => failed('video-error'), { once: true });
+      media.addEventListener('ended', () => { if (video === media) finish(); }, { once: true });
+      actor.append(media);
+      loadingTimer = setTimeout(() => failed('video-timeout'), 5000);
+      media.src = new URL(url, document.baseURI).href;
+      media.load();
+    }
+    if (preferMp4 && allowOpaqueVideo && motion.fallbackVideo) playVideo(motion.fallbackVideo, 'mp4');
+    else playVideo(motion.video, 'webm');
   }
 
   return { play, stop: clear, destroy: clear };

@@ -24,7 +24,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/agouti-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/agouti-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/agouti-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -32,7 +33,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/agouti-b-side-peek.webm"
+        "video": "../assets/obs-videos/agouti-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/agouti-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -40,7 +42,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/agouti-c-center-hop.webm"
+        "video": "../assets/obs-videos/agouti-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/agouti-c-center-hop.mp4"
       }
     ]
   },
@@ -59,7 +62,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/sand-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/sand-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/sand-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -67,7 +71,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/sand-b-side-peek.webm"
+        "video": "../assets/obs-videos/sand-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/sand-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -75,7 +80,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/sand-c-center-hop.webm"
+        "video": "../assets/obs-videos/sand-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/sand-c-center-hop.mp4"
       }
     ]
   },
@@ -94,7 +100,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/yellow_sand-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/yellow_sand-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/yellow_sand-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -102,7 +109,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/yellow_sand-b-side-peek.webm"
+        "video": "../assets/obs-videos/yellow_sand-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/yellow_sand-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -110,7 +118,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/yellow_sand-c-center-hop.webm"
+        "video": "../assets/obs-videos/yellow_sand-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/yellow_sand-c-center-hop.mp4"
       }
     ]
   },
@@ -129,7 +138,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/cream-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/cream-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/cream-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -137,7 +147,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/cream-b-side-peek.webm"
+        "video": "../assets/obs-videos/cream-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/cream-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -145,7 +156,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/cream-c-center-hop.webm"
+        "video": "../assets/obs-videos/cream-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/cream-c-center-hop.mp4"
       }
     ]
   },
@@ -164,7 +176,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/white-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/white-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/white-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -172,7 +185,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/white-b-side-peek.webm"
+        "video": "../assets/obs-videos/white-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/white-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -180,7 +194,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/white-c-center-hop.webm"
+        "video": "../assets/obs-videos/white-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/white-c-center-hop.mp4"
       }
     ]
   },
@@ -199,7 +214,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/black-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/black-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/black-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -207,7 +223,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/black-b-side-peek.webm"
+        "video": "../assets/obs-videos/black-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/black-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -215,7 +232,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/black-c-center-hop.webm"
+        "video": "../assets/obs-videos/black-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/black-c-center-hop.mp4"
       }
     ]
   },
@@ -234,7 +252,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/blue-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/blue-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/blue-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -242,7 +261,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/blue-b-side-peek.webm"
+        "video": "../assets/obs-videos/blue-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/blue-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -250,7 +270,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/blue-c-center-hop.webm"
+        "video": "../assets/obs-videos/blue-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/blue-c-center-hop.mp4"
       }
     ]
   },
@@ -269,7 +290,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/chocolate-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/chocolate-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/chocolate-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -277,7 +299,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/chocolate-b-side-peek.webm"
+        "video": "../assets/obs-videos/chocolate-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/chocolate-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -285,7 +308,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/chocolate-c-center-hop.webm"
+        "video": "../assets/obs-videos/chocolate-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/chocolate-c-center-hop.mp4"
       }
     ]
   },
@@ -304,7 +328,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/lilac-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/lilac-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/lilac-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -312,7 +337,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/lilac-b-side-peek.webm"
+        "video": "../assets/obs-videos/lilac-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/lilac-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -320,7 +346,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/lilac-c-center-hop.webm"
+        "video": "../assets/obs-videos/lilac-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/lilac-c-center-hop.mp4"
       }
     ]
   },
@@ -339,7 +366,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/violet-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/violet-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/violet-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -347,7 +375,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/violet-b-side-peek.webm"
+        "video": "../assets/obs-videos/violet-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/violet-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -355,7 +384,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/violet-c-center-hop.webm"
+        "video": "../assets/obs-videos/violet-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/violet-c-center-hop.mp4"
       }
     ]
   },
@@ -374,7 +404,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/agouti_pied-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/agouti_pied-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/agouti_pied-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -382,7 +413,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/agouti_pied-b-side-peek.webm"
+        "video": "../assets/obs-videos/agouti_pied-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/agouti_pied-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -390,7 +422,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/agouti_pied-c-center-hop.webm"
+        "video": "../assets/obs-videos/agouti_pied-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/agouti_pied-c-center-hop.mp4"
       }
     ]
   },
@@ -409,7 +442,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/sand_pied-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/sand_pied-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/sand_pied-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -417,7 +451,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/sand_pied-b-side-peek.webm"
+        "video": "../assets/obs-videos/sand_pied-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/sand_pied-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -425,7 +460,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/sand_pied-c-center-hop.webm"
+        "video": "../assets/obs-videos/sand_pied-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/sand_pied-c-center-hop.mp4"
       }
     ]
   },
@@ -444,7 +480,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/blue_pied-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/blue_pied-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/blue_pied-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -452,7 +489,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/blue_pied-b-side-peek.webm"
+        "video": "../assets/obs-videos/blue_pied-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/blue_pied-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -460,7 +498,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/blue_pied-c-center-hop.webm"
+        "video": "../assets/obs-videos/blue_pied-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/blue_pied-c-center-hop.mp4"
       }
     ]
   },
@@ -479,7 +518,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/violet_pied-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/violet_pied-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/violet_pied-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -487,7 +527,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/violet_pied-b-side-peek.webm"
+        "video": "../assets/obs-videos/violet_pied-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/violet_pied-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -495,7 +536,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/violet_pied-c-center-hop.webm"
+        "video": "../assets/obs-videos/violet_pied-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/violet_pied-c-center-hop.mp4"
       }
     ]
   },
@@ -514,7 +556,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/cream_pied-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/cream_pied-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/cream_pied-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -522,7 +565,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/cream_pied-b-side-peek.webm"
+        "video": "../assets/obs-videos/cream_pied-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/cream_pied-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -530,7 +574,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/cream_pied-c-center-hop.webm"
+        "video": "../assets/obs-videos/cream_pied-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/cream_pied-c-center-hop.mp4"
       }
     ]
   },
@@ -549,7 +594,8 @@ export const variants = [
           "ja": "下からぴょこ",
           "en": "Pop up"
         },
-        "video": "../assets/obs-videos/black_pied-a-bottom-pop.webm"
+        "video": "../assets/obs-videos/black_pied-a-bottom-pop.webm",
+        "fallbackVideo": "../assets/trial-videos/black_pied-a-bottom-pop.mp4"
       },
       {
         "id": "b-side-peek",
@@ -557,7 +603,8 @@ export const variants = [
           "ja": "端からのぞく",
           "en": "Peek from the side"
         },
-        "video": "../assets/obs-videos/black_pied-b-side-peek.webm"
+        "video": "../assets/obs-videos/black_pied-b-side-peek.webm",
+        "fallbackVideo": "../assets/trial-videos/black_pied-b-side-peek.mp4"
       },
       {
         "id": "c-center-hop",
@@ -565,7 +612,8 @@ export const variants = [
           "ja": "跳び込む",
           "en": "Hop in"
         },
-        "video": "../assets/obs-videos/black_pied-c-center-hop.webm"
+        "video": "../assets/obs-videos/black_pied-c-center-hop.webm",
+        "fallbackVideo": "../assets/trial-videos/black_pied-c-center-hop.mp4"
       }
     ]
   }

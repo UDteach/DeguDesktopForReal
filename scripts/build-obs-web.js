@@ -32,7 +32,10 @@ const variants = colors.map(([id, ja, en]) => {
       const file = `${id}-${motion}.webm`;
       assert.ok(fs.existsSync(path.join(root, 'assets', 'videos', file)), `Missing original video: ${file}`);
       assert.ok(fs.existsSync(path.join(root, 'docs', 'assets', 'obs-videos', file)), `Missing published video: ${file}`);
-      return { id: motion, name: { ja: motionJa, en: motionEn }, video: `../assets/obs-videos/${file}` };
+      const mp4 = `${id}-${motion}.mp4`;
+      assert.ok(fs.existsSync(path.join(root, 'docs', 'assets', 'trial-videos', mp4)), `Missing browser trial MP4: ${mp4}`);
+      return { id: motion, name: { ja: motionJa, en: motionEn },
+        video: `../assets/obs-videos/${file}`, fallbackVideo: `../assets/trial-videos/${mp4}` };
     }),
   };
 });

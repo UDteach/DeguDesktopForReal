@@ -2,6 +2,8 @@
 
 ## Webサイト — 2026-09-27
 
+- おためし画面で透過WebMを再生できない場合は、同じ毛色・動きのMP4、それも再生できない場合は静止画へ切り替えます。MP4再生中は動画の背景色に表示面を合わせます。OBSは透過表示を維持します。 / The browser trial now falls back from transparent WebM to MP4, then to a still image. OBS keeps its transparent fallback.
+
 - 「Webでおためし」を追加。インストールせずに16種類の毛色と3つの動きを見られ、出現間隔・大きさ・背景を選んで全画面でも楽しめます。
 - トップページ、ヘッダー、ダウンロード画面に日本語・英語のおためし導線を追加しました。
 - Added a browser trial with 16 coats, three motions, fullscreen viewing, and interval, size, and background settings. Japanese and English entry points are available on the home and download pages.

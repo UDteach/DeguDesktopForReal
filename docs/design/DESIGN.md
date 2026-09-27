@@ -224,3 +224,11 @@ In v0.5.1, the swarm slots follow each clip's entry direction. The left side-pee
 - Voice: 日本語主体、既存の丁寧な距離感、1文1動作、主導線は「Webでおためし」、内部用語や品質の自称を表示しない。英語も同じ操作順。
 - API references: [requestFullscreen](https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen), [fullscreenEnabled](https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenEnabled)。
 - Verified: [1440px](evidence/after/trial-1440.png)、[320px](evidence/after/trial-320.png)、[全画面](evidence/after/trial-fullscreen.png)、[ホーム](evidence/after/trial-home-desktop.png)、[モバイル導線](evidence/after/trial-home-mobile.png)。参照との差はデグーの配色・4項目の設定のみ。320pxのDL見出しを調整済み。未解決の表示差はない。検査の詳細と未実施の環境は `qa/web-trial/results.md` に記載。
+
+
+### MP4 fallback — 2026-09-27
+
+- Reference: AnimalsDesktop2 commit `641078d03b5f432ac7c636f17b7ea8fd0f166a43`。Deguの既存3動作と配置は保持し、Web試用のみ透過WebM → 同じ毛色・動きのMP4 → PNGへ切り替える。
+- Asset contract: 確定済み720p透過WebMから48本のH.264 MP4を生成。16:9、24fps、4秒、無音。透明部分は `#f2eee6` に合成する。
+- Background: MP4中は実際にデコードされた隅の色を表示面に設定し、背景選択を明るい背景に固定して日英で理由を説明。PNGまたはWebMへ戻ると保存した背景へ復帰する。OBSはMP4を許可しない。
+- Verification: 修正前のWebKit iPhoneモードでPNGになる症状を再現。修正後の実再生・描画・背景復帰・OBS回帰・非同期処理の検証は `qa/web-trial/mp4-fallback.md` に記録。iPhone実機とiOS Simulatorは未検証。

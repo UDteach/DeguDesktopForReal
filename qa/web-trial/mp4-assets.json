@@ -1,0 +1,1448 @@
+{
+  "generatedAt": "2026-09-27T07:57:26.166917+00:00",
+  "background": "#f2eee6",
+  "count": 48,
+  "totalBytes": 27984454,
+  "files": [
+    {
+      "file": "docs/assets/trial-videos/agouti-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/agouti-a-bottom-pop.webm",
+      "sourceSha256": "5502a568667837f4831db3ebfcb1a55cf7533cc94c873f84465b6f45b8430240",
+      "sha256": "2f81d11eceb53433f0afb827b83be9c86d57dbbaf6407c2a3e6b552fe5857e2a",
+      "bytes": 760174,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11265,
+      "backgroundMeanRgb": [
+        242.001,
+        237.998,
+        229.997
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/agouti-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/agouti-b-side-peek.webm",
+      "sourceSha256": "9f1ba96375b48c4920fd99d85253ac38ec226ed4ca9850b3c52d357e22a02209",
+      "sha256": "40bf48ea700a2bacee012d8fbc7c091d759c9226ebcfb00b4a0a080e22c78bf3",
+      "bytes": 1155779,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 8854,
+      "backgroundMeanRgb": [
+        241.994,
+        237.986,
+        229.993
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/agouti-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/agouti-c-center-hop.webm",
+      "sourceSha256": "92361c9f9852d1aec3459311bacc757ea11b56e1d5d1a746b864d165161e79b5",
+      "sha256": "b5a1cd88d8d96e632b7a00b31033b7b47a0ecf71630a5c8552f5d3a6ba9f7e5c",
+      "bytes": 802608,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 12070,
+      "backgroundMeanRgb": [
+        242.003,
+        238.0,
+        229.999
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/agouti_pied-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/agouti_pied-a-bottom-pop.webm",
+      "sourceSha256": "1fbb52b2379502eafcb67924e3274b43f4cb0167b1336364d0374f18d2885d61",
+      "sha256": "2b002720c43a37784ff5ec8be4db204484ce5f9a373eb205df9960ac3afc0dbf",
+      "bytes": 482451,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11563,
+      "backgroundMeanRgb": [
+        241.996,
+        237.998,
+        229.999
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/agouti_pied-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/agouti_pied-b-side-peek.webm",
+      "sourceSha256": "df8b6a245aef02d56c07db5b60f32dea833b7973f8195416903c43a26b2755da",
+      "sha256": "c1d3a697787a1b15b7b84e8212e57e3915f8c91692b91d754119a073c7ef237a",
+      "bytes": 750420,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10245,
+      "backgroundMeanRgb": [
+        241.997,
+        237.987,
+        229.989
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/agouti_pied-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/agouti_pied-c-center-hop.webm",
+      "sourceSha256": "5d6d707b0e8a74f92e2f77cd2a7e8b9567d03df4dafd73b5eedcf2e3b3e02825",
+      "sha256": "f5064a24153bf05169b0b43dce8c750476b5e61fb3e48024a9ae763860491136",
+      "bytes": 442005,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 12590,
+      "backgroundMeanRgb": [
+        242.0,
+        237.995,
+        229.997
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/black-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/black-a-bottom-pop.webm",
+      "sourceSha256": "36dddecb31581a8de7fd27d539024f2dbb4c7bcb3fd5aeb4e4e26c318cc1e6c7",
+      "sha256": "e34349a79627440f617a1818f56bce0e42a45ec5b324489e757c978160eeede9",
+      "bytes": 620444,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11324,
+      "backgroundMeanRgb": [
+        241.992,
+        237.99,
+        229.995
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/black-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/black-b-side-peek.webm",
+      "sourceSha256": "3d0d7faf87040aa8706f679d0efd539a4ba3db79214598a5ab51f47627b75175",
+      "sha256": "e18bd95c2e593c8b2de5ef4d3d6dd55c6cd7e8e4e443d9f1465462c39f724502",
+      "bytes": 547132,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11152,
+      "backgroundMeanRgb": [
+        242.0,
+        237.997,
+        230.003
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/black-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/black-c-center-hop.webm",
+      "sourceSha256": "a5d4b5206dd44d513cff00d099277ad3edf02265eaf3dad65c871917c85e969f",
+      "sha256": "8331794cbbd9115a84b5ad9a140961c55b70cc12c9f5b91047cb5cf086839f10",
+      "bytes": 621016,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11564,
+      "backgroundMeanRgb": [
+        241.991,
+        237.987,
+        229.99
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/black_pied-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/black_pied-a-bottom-pop.webm",
+      "sourceSha256": "a90d8e80e5fbb0274dfcd5e2651db81752c0089c2222e31dfeafaaafca360aa2",
+      "sha256": "4a4823a2ff0097436ace620425878ef35ad9541e84f6e79f504f364dc697a37e",
+      "bytes": 633135,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11624,
+      "backgroundMeanRgb": [
+        241.996,
+        237.992,
+        229.997
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/black_pied-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/black_pied-b-side-peek.webm",
+      "sourceSha256": "e6b1ef2a2ad428582c7efe033e3c6a2f9140cdb2d1e1fe91c5bad98d0a1d8b41",
+      "sha256": "4f9981760ccdf13fe63b46ab59ea34449b2c84b73f41f8c6c52ae0bb30a5d0ee",
+      "bytes": 736749,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10197,
+      "backgroundMeanRgb": [
+        241.992,
+        237.987,
+        229.995
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/black_pied-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/black_pied-c-center-hop.webm",
+      "sourceSha256": "81d11c3f37b42788b7e412ace77aabdce6bf5e1687bfc36652d4be2b8f731294",
+      "sha256": "75140273f80b5ffb942f51f6d70af63771d8674e79a7cc379f467bdaf6f3d154",
+      "bytes": 558281,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 12148,
+      "backgroundMeanRgb": [
+        241.996,
+        237.994,
+        229.999
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/blue-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/blue-a-bottom-pop.webm",
+      "sourceSha256": "d85084c9e8cbd889256ab81563fa786bbb17666d4267bc6035b0d79c7fae1462",
+      "sha256": "b0d177daed909f7799efb7b63b82e2e880bab9ae52bbdef38bce7c320bd83244",
+      "bytes": 587069,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11270,
+      "backgroundMeanRgb": [
+        241.996,
+        237.996,
+        230.004
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/blue-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/blue-b-side-peek.webm",
+      "sourceSha256": "55cac665b551e9f581d34183552b1d64a52edc9882ed45aa2ee6bf1cb8893056",
+      "sha256": "c828844ebe37a79f216362a8197393e25f7c9e4d8f9c4de6dcd8ebdc4df5d24a",
+      "bytes": 652845,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11002,
+      "backgroundMeanRgb": [
+        241.991,
+        237.991,
+        230.003
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/blue-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/blue-c-center-hop.webm",
+      "sourceSha256": "544704ca8d6ee3f924816abe5c45f0f04672c346e05a18bf9c33256fe17b58b7",
+      "sha256": "48d4ad26eff2cb104ced83b23f2e376aaacfedef58598a966de2a1734af526a9",
+      "bytes": 470804,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11498,
+      "backgroundMeanRgb": [
+        241.99,
+        237.986,
+        229.993
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/blue_pied-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/blue_pied-a-bottom-pop.webm",
+      "sourceSha256": "317eedde85ededa4f8fcf772f5d6d6a1d81ea20d1cf0f37995f004a9b4076675",
+      "sha256": "895dbd244c63d870b40e8008db10ceb800003120695177751685657c33448073",
+      "bytes": 436331,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11614,
+      "backgroundMeanRgb": [
+        242.0,
+        237.998,
+        230.001
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/blue_pied-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/blue_pied-b-side-peek.webm",
+      "sourceSha256": "ff263c2710ca4d80c57396c9ad977a1648330d00b54476ef2c351913f6af9a5f",
+      "sha256": "85650c9bbaa28816eb368b106c9c4ff40163bf0bc3968bb666d32fdd102a8761",
+      "bytes": 522373,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11529,
+      "backgroundMeanRgb": [
+        241.993,
+        237.991,
+        229.996
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/blue_pied-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/blue_pied-c-center-hop.webm",
+      "sourceSha256": "9ec12a3f35e0bbec97e2363503de83bdca88dcab74cbb8443c2f0fb64915084e",
+      "sha256": "9871f1edd5b56b0dc1b98fa134563a224d546680454f029a587156ee12e2226b",
+      "bytes": 1418998,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10187,
+      "backgroundMeanRgb": [
+        241.997,
+        237.993,
+        230.0
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/chocolate-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/chocolate-a-bottom-pop.webm",
+      "sourceSha256": "f6ae53bca1c4d5b36d575c9eab57df8316699ff8380120ef2db0435e66fff9a3",
+      "sha256": "77ae011d6acfd1d072e476aa290c83065c409c9a654e6e5a0580252d0d05c04e",
+      "bytes": 526813,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11048,
+      "backgroundMeanRgb": [
+        241.995,
+        237.994,
+        229.996
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/chocolate-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/chocolate-b-side-peek.webm",
+      "sourceSha256": "99ba70507b87917c88deb61a4685a517df901d8d9bfb49006b61eb311b3845f4",
+      "sha256": "96eaa4bee54c49292616c70befa9828eaf2f10615cb93fb6e2b5dbe7696a0a59",
+      "bytes": 655622,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10280,
+      "backgroundMeanRgb": [
+        241.996,
+        237.987,
+        229.99
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/chocolate-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/chocolate-c-center-hop.webm",
+      "sourceSha256": "435aa4855c1c1749d9c4f45e9c877dad96cab27d04a13cdccc4149631eaf2837",
+      "sha256": "014d3360d5f649a17e863ef5fb30295c0060c6b7286aad426e9f23ec57975f84",
+      "bytes": 491333,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11629,
+      "backgroundMeanRgb": [
+        242.003,
+        237.999,
+        229.996
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/cream-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/cream-a-bottom-pop.webm",
+      "sourceSha256": "8d9afed83093a0c77ad2f05f3b6bca09347b06575f83fbe4bcff535716321f36",
+      "sha256": "195a3d0171ef45a7e629ea783bedb40ab2226e67c8ed9a98d4f39599d8411550",
+      "bytes": 313129,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 12053,
+      "backgroundMeanRgb": [
+        241.996,
+        237.998,
+        230.0
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/cream-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/cream-b-side-peek.webm",
+      "sourceSha256": "aa9681e8160e2e4af22f9918f0e5f3e31eee838bc368c03b5aa21228ec6682a8",
+      "sha256": "0ffdb8430d72f44c14f4a88533cf9b2b0674bf0fb4968ae5472d5c804df9afdf",
+      "bytes": 540219,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10228,
+      "backgroundMeanRgb": [
+        241.99,
+        237.99,
+        229.995
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/cream-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/cream-c-center-hop.webm",
+      "sourceSha256": "c2566ec0d2ff076a76bba9cf4897e6f1b2dafe58cc0a54efee54f80abb6a5e7d",
+      "sha256": "a9210315e6a8428965b55caf881b9d550719d20aa2ddd8dfe2df2f0b9c3fff82",
+      "bytes": 605699,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11531,
+      "backgroundMeanRgb": [
+        241.995,
+        237.993,
+        229.994
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/cream_pied-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/cream_pied-a-bottom-pop.webm",
+      "sourceSha256": "451ec02881a7f3619d884ccd4c48d0b79ec5f99ee398f905d9ca30c4af268866",
+      "sha256": "f5244e0b152bc5d963687341656df85b78833f6b3bd1a8e8a0a3ac320c7c2b9a",
+      "bytes": 365205,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11081,
+      "backgroundMeanRgb": [
+        241.997,
+        237.996,
+        230.0
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/cream_pied-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/cream_pied-b-side-peek.webm",
+      "sourceSha256": "e0d0281a9072b23e1fb85de415172a85404130bcc381b95a46f9aa6c7b48524e",
+      "sha256": "2857fbb9dfa4ce7ececbb14a3f29863cb987ec46f96825ba3c9c7b4fff9e2efa",
+      "bytes": 479227,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10571,
+      "backgroundMeanRgb": [
+        241.994,
+        237.987,
+        229.993
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/cream_pied-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/cream_pied-c-center-hop.webm",
+      "sourceSha256": "b208d904873729da22783e7cb56b7f23f8aaaa921e5a08ed4d60161ecfe8227d",
+      "sha256": "22412a0d4d981dd94a4e8591a8d9e331037c5d8241d21d256cfd5cf3f731e021",
+      "bytes": 352687,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 12054,
+      "backgroundMeanRgb": [
+        241.998,
+        237.995,
+        229.993
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/lilac-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/lilac-a-bottom-pop.webm",
+      "sourceSha256": "98420f8bed6732c53be7e7cdb6e7e2393d694b7351e6a37d1137cebafba7155e",
+      "sha256": "8cadd9550ecaad030ec2f76d73ed8dbd1bcc99ebdd8255b5c3e94aa0121c7ed5",
+      "bytes": 544541,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10781,
+      "backgroundMeanRgb": [
+        241.997,
+        237.995,
+        229.997
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/lilac-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/lilac-b-side-peek.webm",
+      "sourceSha256": "6320e5657acab969603d5f3e54655570ef9a10db2e0438d6504991e9dbd65e13",
+      "sha256": "7b1b13af9f751e17668ba37855872583cbb0dd0a8afcf50472f98791b869fbaa",
+      "bytes": 590692,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10185,
+      "backgroundMeanRgb": [
+        241.997,
+        237.995,
+        229.997
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/lilac-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/lilac-c-center-hop.webm",
+      "sourceSha256": "9c8a66d6ffd77978148a086481b6b2895140565eff657f8d68aa1c905ba33580",
+      "sha256": "e1060e0b8002f510009aab352d0e28fd438735549fc1593242552c38322727ca",
+      "bytes": 510059,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10996,
+      "backgroundMeanRgb": [
+        241.992,
+        237.988,
+        229.989
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/sand-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/sand-a-bottom-pop.webm",
+      "sourceSha256": "c7faed51d087cb9a0914aff55f643890770cc7fddcf4d60f6301185af3af0063",
+      "sha256": "75f79082500c1f1e0bbf22d65924d9e4c5777b1394edea138bae938de7507174",
+      "bytes": 545302,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11924,
+      "backgroundMeanRgb": [
+        242.003,
+        237.997,
+        229.995
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/sand-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/sand-b-side-peek.webm",
+      "sourceSha256": "9ef986af8e4f4410b04404677e43c993313f3fa5fb8f718059a988611cfb43f5",
+      "sha256": "f04b83b2dd0fd22132c7370bbecb623cb7514a774a258513ed25f9f75b8ab65c",
+      "bytes": 613980,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11736,
+      "backgroundMeanRgb": [
+        241.999,
+        237.996,
+        229.996
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/sand-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/sand-c-center-hop.webm",
+      "sourceSha256": "126baca9fb6a1bbda69b64e4d015eda3396c89221bf89afa8cefae0762679ae6",
+      "sha256": "93d51405dc2f53b49f0bbb29dd9244b2e4f0d81d06316c37fcd3efe631ad827b",
+      "bytes": 331195,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 12791,
+      "backgroundMeanRgb": [
+        242.001,
+        237.999,
+        229.999
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/sand_pied-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/sand_pied-a-bottom-pop.webm",
+      "sourceSha256": "2d3b4f3b5b1ade50c903fcb6b9a940e210adec529481e45d99362e528ae93349",
+      "sha256": "2ffc4ceb93881481e8d43a4ed26908c57c51ba689858dfeb9806e29b248d7dee",
+      "bytes": 436237,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11289,
+      "backgroundMeanRgb": [
+        241.998,
+        237.997,
+        229.996
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/sand_pied-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/sand_pied-b-side-peek.webm",
+      "sourceSha256": "5f75b273b96523da786285ec4ee73d9837d4523dd6d029bacbac100a4be26519",
+      "sha256": "dadb698cd1ec627bf0ee42c6f4374d1ace7d21083c2e137425c8a675b00ed263",
+      "bytes": 595185,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10600,
+      "backgroundMeanRgb": [
+        241.993,
+        237.989,
+        229.991
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/sand_pied-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/sand_pied-c-center-hop.webm",
+      "sourceSha256": "a9a861ff0aa7f57da4a428fb52b05f298624b5ff1194b59d42a46b7faa79584d",
+      "sha256": "e95eef01be4d20f9b1176cf0163413947f62ac519897bc356167ce7c53e1ac9f",
+      "bytes": 467621,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11750,
+      "backgroundMeanRgb": [
+        241.995,
+        237.994,
+        229.993
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/violet-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/violet-a-bottom-pop.webm",
+      "sourceSha256": "285447dcd0d0ab072322e120a5238b5d4d657de3ac8f95005e53769454459e7f",
+      "sha256": "7e702a32c9dac69ccd907e0dbc3799ea54650690308f982b938f3ce2ad683215",
+      "bytes": 405663,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11244,
+      "backgroundMeanRgb": [
+        241.997,
+        237.996,
+        229.999
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/violet-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/violet-b-side-peek.webm",
+      "sourceSha256": "5a9e8836d952bd3c0cda9ca01a3887dc393b30aca6dc20f3b3cdfdf017cb0871",
+      "sha256": "d582f1fda6b953a6b3575229a247ed162d98443c52fdc0d69db0ac8ffd1fc713",
+      "bytes": 525248,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 9932,
+      "backgroundMeanRgb": [
+        241.997,
+        237.995,
+        230.0
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/violet-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/violet-c-center-hop.webm",
+      "sourceSha256": "2ace3d4a85b75668d6109535b416b9049c72d3f81e955ac070bc8f42c83e01f2",
+      "sha256": "2f28b69abec00aa9ceff8bcf906ac81eb13e5bb76c010ee74603670d44276f7b",
+      "bytes": 341657,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 12181,
+      "backgroundMeanRgb": [
+        241.999,
+        237.993,
+        229.999
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/violet_pied-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/violet_pied-a-bottom-pop.webm",
+      "sourceSha256": "d7c88aa140cd3ba185e896a24aef87fdc15d8c7e6db8c611417a4aba6ea5b8f5",
+      "sha256": "d521dc3363908808ef1caa9df196bcd47a15cd4a7cac57466c3ea6793fcc785b",
+      "bytes": 535197,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11224,
+      "backgroundMeanRgb": [
+        241.997,
+        237.996,
+        229.999
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/violet_pied-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/violet_pied-b-side-peek.webm",
+      "sourceSha256": "f857efc4bf200851fafe86921bc21cc3255244c2f7b6f1db559cda57fc0559b7",
+      "sha256": "539b3c5f48564265a6385b378a579035345220bddbc691d41547157b9580e6bb",
+      "bytes": 608577,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10917,
+      "backgroundMeanRgb": [
+        241.997,
+        237.994,
+        229.996
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/violet_pied-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/violet_pied-c-center-hop.webm",
+      "sourceSha256": "e7c01e071df08337c6ff777f397a1ddd272f8466fbd2c9d1428f84ddd02209c9",
+      "sha256": "a97582bba3270797974fbdcf4a36cfe3343039faee21b37df61b12b215251015",
+      "bytes": 968255,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11212,
+      "backgroundMeanRgb": [
+        241.995,
+        237.989,
+        229.992
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/white-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/white-a-bottom-pop.webm",
+      "sourceSha256": "a17e7204450d8a9afbbf94e631978924903c5ece162e10b135524f6e902eed48",
+      "sha256": "112be838cbdf5faa177f5c3de74a43b529759ab40c177f55343e0f849207b67e",
+      "bytes": 637686,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10580,
+      "backgroundMeanRgb": [
+        241.997,
+        237.995,
+        229.998
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/white-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/white-b-side-peek.webm",
+      "sourceSha256": "9409ae4b3b69beaa63d80c83e0ca434c6d291aa161a09d66eab4ee30b5a2b7ae",
+      "sha256": "a71ea57b733350131e3d30b34b25e08879b0a9136c65f74dd3378ceca1a31cbe",
+      "bytes": 639982,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 9823,
+      "backgroundMeanRgb": [
+        241.998,
+        237.992,
+        229.995
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/white-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/white-c-center-hop.webm",
+      "sourceSha256": "c87f1a316816c0e9a39f10f45f6c15c0226b53c6c938cfe6abb9f33c35f6950a",
+      "sha256": "3b921c581c3833cea0f5bcaae55831834b7a2954fb645da2d809191ecf51defa",
+      "bytes": 369005,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 12051,
+      "backgroundMeanRgb": [
+        241.998,
+        237.997,
+        229.997
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/yellow_sand-a-bottom-pop.mp4",
+      "source": "docs/assets/obs-videos/yellow_sand-a-bottom-pop.webm",
+      "sourceSha256": "0888c3887f5b2f0a6507bb2fa37fe9f8a2c0febaf94eac5103c4ade2677f47af",
+      "sha256": "9505186bbcc33b0592b41f92c1116f6a4b92ca31dd9aa0e8f8c9be85860965ba",
+      "bytes": 587800,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 10661,
+      "backgroundMeanRgb": [
+        241.996,
+        237.994,
+        229.996
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/yellow_sand-b-side-peek.mp4",
+      "source": "docs/assets/obs-videos/yellow_sand-b-side-peek.webm",
+      "sourceSha256": "d6e1307ee81e90fe931e420dff4167c52cf0334987912c9c9e8295a0002e08de",
+      "sha256": "fcbfb323cee642951b6b6d425d66dd35940338149e6f0a7a6e06429c30d8b1bf",
+      "bytes": 427298,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 11667,
+      "backgroundMeanRgb": [
+        241.998,
+        237.996,
+        229.994
+      ],
+      "blackBackgroundSamples": 0
+    },
+    {
+      "file": "docs/assets/trial-videos/yellow_sand-c-center-hop.mp4",
+      "source": "docs/assets/obs-videos/yellow_sand-c-center-hop.webm",
+      "sourceSha256": "3e1a3797c777807c1cb3ea03c8efd8c688f319fc3c73a42fe4480096310cf97f",
+      "sha256": "73bf383f35e1becb0b61326e190d63880b9af0c81aab88f08e810f501073054b",
+      "bytes": 774726,
+      "codec": "h264",
+      "profile": "Constrained Baseline",
+      "level": 31,
+      "pixelFormat": "yuv420p",
+      "width": 1280,
+      "height": 720,
+      "fps": "24/1",
+      "frames": 96,
+      "durationSeconds": 4.0,
+      "faststart": true,
+      "audioStreams": 0,
+      "sampleAtSeconds": 2,
+      "sourceAlphaRange": [
+        0,
+        255
+      ],
+      "transparentSamples": 12538,
+      "backgroundMeanRgb": [
+        242.004,
+        237.999,
+        230.001
+      ],
+      "blackBackgroundSamples": 0
+    }
+  ]
+}

@@ -14,7 +14,10 @@ test('published catalog covers exactly the approved animals and motions', () => 
   for (const variant of variants) {
     assert.equal(variant.motions.length, 3);
     assert.match(variant.image, /^\.\.\/assets\/colors\/[^/]+\.png$/);
-    for (const motion of variant.motions) assert.match(motion.video, /^\.\.\/assets\/obs-videos\/[^/]+\.webm$/);
+    for (const motion of variant.motions) {
+      assert.match(motion.video, /^\.\.\/assets\/obs-videos\/[^/]+\.webm$/);
+      assert.equal(motion.fallbackVideo, motion.video.replace('/obs-videos/', '/trial-videos/').replace(/\.webm$/, '.mp4'));
+    }
   }
 });
 
