@@ -2,6 +2,8 @@
 .download-intro{display:flex;align-items:center;justify-content:space-between;gap:32px;min-width:0}
 .download-intro h1{font-size:clamp(37px,4.1vw,62px);letter-spacing:-.065em;line-height:1.3;margin:20px 0}
 .download-intro p{max-width:690px;color:#5c6558;font-size:16px;line-height:1.9;margin:0}
+.trial-invitation{margin-top:22px}
+.trial-invitation p{margin:0 0 12px}
 .download-intro img{width:180px;height:180px;object-fit:contain;object-position:center bottom;flex:none;filter:drop-shadow(0 12px 8px #3947351a)}
 .mac-fix-notice{margin-top:34px;padding:18px 22px;border:1px solid #bfd1b7;border-radius:16px;background:#e9f1e4;color:#344a39}
 .mac-fix-notice strong{display:block;font-size:16px}
@@ -37,5 +39,5 @@
 .release-link a{color:#344a39;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 a:focus-visible{outline:3px solid #315c9e;outline-offset:4px}
 @media(max-width:900px){.platforms{grid-template-columns:1fr}.platform-card{min-height:0}.platform-card p{min-height:0}.download-intro img{width:145px;height:145px}.mac-steps{grid-template-columns:1fr}}
-@media(max-width:600px){.download-page{padding:46px 22px 70px}.download-intro{align-items:flex-start}.download-intro h1{font-size:36px;line-height:1.35}.download-intro p{font-size:14px}.download-intro img{display:none}.mac-fix-notice{margin-top:28px;padding:16px 18px}.platforms{gap:14px;margin-top:24px}.platform-card{padding:25px}.platform-card h2{font-size:25px}.platform-card p{margin-bottom:24px}.mac-first-open{margin-top:32px;padding:26px 18px}.mac-steps{gap:12px}.mac-steps li{padding:19px 16px 18px 54px}.mac-steps li:before{top:17px;left:16px}.download-help{grid-template-columns:1fr;gap:28px;margin-top:38px}.release-link{line-height:1.8}}
-@media(max-width:360px){.download-intro h1{font-size:30px}.platform-action{font-size:12px;gap:6px}}
+@media(max-width:600px){.download-page{padding:46px 22px 70px}.download-intro{align-items:flex-start}.download-intro h1{font-size:clamp(28px,8.5vw,36px);line-height:1.35}.download-intro p{font-size:14px}.download-intro img{display:none}.mac-fix-notice{margin-top:28px;padding:16px 18px}.platforms{gap:14px;margin-top:24px}.platform-card{padding:25px}.platform-card h2{font-size:25px}.platform-card p{margin-bottom:24px}.mac-first-open{margin-top:32px;padding:26px 18px}.mac-steps{gap:12px}.mac-steps li{padding:19px 16px 18px 54px}.mac-steps li:before{top:17px;left:16px}.download-help{grid-template-columns:1fr;gap:28px;margin-top:38px}.release-link{line-height:1.8}}
+@media(max-width:360px){.download-intro h1{font-size:28px}.platform-action{font-size:12px;gap:6px}}

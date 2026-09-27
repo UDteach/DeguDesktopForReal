@@ -211,3 +211,16 @@ In v0.5.1, the swarm slots follow each clip's entry direction. The left side-pee
 - Visible controls: Coat and motion selection, order, interval, size, side, display area, opacity, video/image mode, named presets, URL import, and URL copy. The output page contains only the transparent stage.
 - Visual constraints: Reuse `docs/style.css` color roles and the actual coat images. Show the practical next step before a long explanation. Keep the preview background and area outline out of the OBS page.
 - Verification: [Desktop 1280 px](evidence/after/obs-desktop-1280.png) and [mobile 320 px](evidence/after/obs-mobile-320.png). The 320 px page has no horizontal overflow. Playback, fallback, URL validation, and transparency checks are recorded in `qa/obs-web/results.md` at the repository root.
+
+
+## Webでおためし — 2026-09-27
+
+- User-selected target: AnimalsDesktop2 の `web/try/` と同じ体験。大きな表示面を中心に、再生・一時停止・全画面、下に簡単な設定を置く。参考画面: `/Users/kyota/Desktop/AnimalsDesktop2/qa/web-trial/desktop.png` と `mobile-320.png`。他の方向の選定はユーザーの「同じように」の指定で完了している。
+- Adaptation: デグーは1種類なので種選択を省き、16色の毛色・出現間隔・大きさ・背景を4項目で表示。Deguの生成り、緑、DM Sans / Noto Sans JP、公開中の48本の動画を使う。
+- Flow: 日本語・英語トップの主ボタン、モバイルでも見えるヘッダー、ダウンロード冒頭から `try/` / `try/?lang=en` へ。アプリ・OBSへの案内は表示面の後に置く。
+- Behavior: 通常は開いたら再生。手動一時停止を設定変更・タブ復帰時も維持。動きを減らす設定では停止して開始。保存不可でも使用でき、OBSとは保存キーを分ける。動画失敗時は同じ毛色の画像へ切り替える。
+- Fullscreen: ユーザー操作で開始。非対応または拒否ではページ内拡大へ切り替え、戻るボタンとEscを用意。操作部は非操作時に隠し、タップ・マウス・キーボードで復帰。拡大中は画面外の操作対象をinertにする。
+- Baseline: [Desktop](evidence/baseline/trial-home-desktop.png), [320px](evidence/baseline/trial-home-mobile.png)。公開前の検証と表示差は `qa/web-trial/results.md` に記録する。
+- Voice: 日本語主体、既存の丁寧な距離感、1文1動作、主導線は「Webでおためし」、内部用語や品質の自称を表示しない。英語も同じ操作順。
+- API references: [requestFullscreen](https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullscreen), [fullscreenEnabled](https://developer.mozilla.org/en-US/docs/Web/API/Document/fullscreenEnabled)。
+- Verified: [1440px](evidence/after/trial-1440.png)、[320px](evidence/after/trial-320.png)、[全画面](evidence/after/trial-fullscreen.png)、[ホーム](evidence/after/trial-home-desktop.png)、[モバイル導線](evidence/after/trial-home-mobile.png)。参照との差はデグーの配色・4項目の設定のみ。320pxのDL見出しを調整済み。未解決の表示差はない。検査の詳細と未実施の環境は `qa/web-trial/results.md` に記載。
